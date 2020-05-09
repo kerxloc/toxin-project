@@ -1,0 +1,9 @@
+@mixin buttons-style {
+    border-radius: 22px;
+    font-family: $main-font;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    height: 34px;
+}
