@@ -1,0 +1,77 @@
+@import './normalize.scss';
+@import './assets/scss/vars.scss';
+
+header {
+    height: 70px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, .05);
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: rgba(31, 32, 65, .5);
+}
+
+.toxin-logo {
+    &__logo {
+        margin: 15px 13px 15px 140px;
+    }
+    &__logo-text {
+        margin: 28px 0 29px;
+    }
+}
+
+.menu {
+    margin-left: 285px;
+    &-items {
+      display: flex; 
+      margin: 26px 0;
+    }
+    &-items__item {
+        padding-right: 20px;
+        font-family: $main-font;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+//.services {
+//    font-family: $icon-font;
+//    font-size: 22px;
+//}
+
+.buttons {
+    margin: 18px 0;
+    &__login {
+        width: 87px;
+        height: 34px;
+        background: none;
+        border-radius: 22px;
+        border-color: #bc9cff;
+        border-style: solid;
+        font-family: $main-font;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+        color: #bc9cff;
+        line-height: 15px;
+    }
+    &__registration {
+        width: 196px;
+        height: 34px;
+        border-radius: 22px;
+        border-style: none;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        font-family: $main-font;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+        color: #fff;
+        line-height: 15px;
+        margin-left: 20px;
+    }
+}
+
+//add mixin
