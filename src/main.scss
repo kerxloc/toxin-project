@@ -3,7 +3,8 @@
 @import './assets/scss/mixins.scss';
 
 header {
-    height: 70px;
+    min-height: 70px;
+    width: auto;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, .05);
     display: flex;
 }
@@ -25,7 +26,7 @@ a {
     &__logo-text {
         width: 53px;
         height: 12px;
-        margin: 28px 285px 29px 12px;
+        margin: 28px 285px 29px 12.5px;
     }
 }
 
@@ -33,6 +34,7 @@ a {
     &-items {
       display: flex; 
       margin: 26px 0;
+      justify-content: center;
     }
     &-items__item {
         font-family: $main-font;
@@ -41,10 +43,17 @@ a {
         line-height: 17px;
     }
 }
-//.services {
-//    font-family: $icon-font;
-//    font-size: 22px;
-//}
+.icons {
+    display: flex;
+}
+.expand {
+    font-family: $icon-font;
+    font-size: 24px;
+    width: 24px;
+    height: 21px;
+    line-height: 20px;
+
+}
 
 .buttons {
     margin: 18px 0;
@@ -55,7 +64,6 @@ a {
         border-color: #bc9cff;
         border-style: solid;
         color: #bc9cff;
-        
     }
     &__registration {
         @include buttons-style;
