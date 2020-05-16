@@ -71,7 +71,9 @@ module.exports = {
             test: /\.(woff|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]'
+              name: '[name].[ext]',
+              outputPath: './',
+              useRelativePath: true
             }
           }
         ],

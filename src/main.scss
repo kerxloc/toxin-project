@@ -2,61 +2,53 @@
 @import './assets/scss/vars.scss';
 @import './assets/scss/mixins.scss';
 
-header {
-    min-height: 70px;
-    width: auto;
+.nav {
+    height: 70px;
+    width: 100%;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, .05);
+    background-color: #fff;
     display: flex;
+    align-items: center;
 }
 
-ul {
-    list-style: none;
-}
 a {
     text-decoration: none;
     color: rgba(31, 32, 65, .5);
 }
 
-.toxin-logo {
-    &__logo {
-        margin: 15px 0 15px 140px;
-        width: 40px;
-        height: 40px;
+.logo {
+    &__img {
+        margin: 15px 12px 16px 140px;
     }
-    &__logo-text {
-        width: 53px;
-        height: 12px;
-        margin: 28px 285px 29px 12.5px;
+    &__text {
+        margin: 32px 285px 29px -4px;
     }
 }
-
-.menu {
-    &-items {
-      display: flex; 
-      margin: 26px 0;
-      justify-content: center;
-    }
-    &-items__item {
+.top-nav {
+      display: flex;
+      align-items: center; 
+      margin: 26px 2px;
+    &__link {
         font-family: $main-font;
-        padding-right: 20px;
+        margin-right: 20px;
         font-size: 14px;
         line-height: 17px;
     }
+    &__link:last-child {
+        margin: 0;
+    }
 }
-.icons {
+.icon {
     display: flex;
-}
-.expand {
+    align-items: center;
+&__expand {
     font-family: $icon-font;
     font-size: 24px;
-    width: 24px;
-    height: 21px;
     line-height: 20px;
-
+    }
 }
-
-.buttons {
-    margin: 18px 0;
+.button {
+    margin: 18px -1px;
     &__login {
         @include buttons-style;
         width: 87px;
@@ -64,6 +56,7 @@ a {
         border-color: #bc9cff;
         border-style: solid;
         color: #bc9cff;
+        margin-left: 20px;
     }
     &__registration {
         @include buttons-style;
@@ -71,6 +64,22 @@ a {
         border-style: none;
         background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
         color: #fff;
-        margin-left: 20px;
+        margin-left: 16px;
     }
+}
+
+.main-img {
+    width: 100%;
+    height: 830px;
+}
+.room-search {
+    height: 374px;
+    width: 380px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0, .12);
+    border-radius: 4px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, .2);
+    position: absolute;
+    left: 140px;
+    top: 140px;
 }
