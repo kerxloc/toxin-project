@@ -5,6 +5,29 @@
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
-    height: 34px;
     cursor: pointer;
+}
+
+@mixin label-style {
+    display: block;
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1f2041;
+}
+
+@mixin input-style {
+    height: 44px;
+    background: #fff;
+    border: 1px solid rgba(31, 32, 65, .25);
+    border-radius: 4px;
+}
+
+@mixin placeholder-style {
+    font-family: $main-font;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, .75);
 }

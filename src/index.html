@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,21 +19,32 @@
                     <a href="#" class="top-nav__link">Новости</a>
                     <a href="#" class="top-nav__link icon">Соглашения<span class="icon__expand">expand_more</span></a>
                 </div>
-                <div class="button">
-                    <button class="button__login">Войти</button>
-                    <button class="button__registration">Зарегистрироваться</button>
+                <div>
+                    <button class="button button__login">Войти</button>
+                    <button class="button button__registration">Зарегистрироваться</button>
                 </div>
             </nav>
     </header>
 
     <section class="main">
         <img src="./assets/img/bg-image.png" class="main-img">
-        <form class="search-form">
-            <p class="search-form__title">Найдём номера под<br>ваши пожелания</p>
-            <span class="search-form__content">Прибытие</span>
-            <span class="search-form__content">Выезд</span>
-            <input type="text" placeholder="ДД.ММ.ГГГГ" class="search-form__input">
-            <input type="text" placeholder="ДД.ММ.ГГГГ" class="search-form__input">
+        <form class="form search-form" action="#">
+            <h1 class="form__title">Найдём номера под<br>ваши пожелания</h1>
+                <div class="form__row">
+                    <div class="form__group-1">
+                        <label class="form__label">Прибытие</label>
+                        <input type="text" placeholder="ДД.ММ.ГГГГ">
+                    </div>
+                    <div class="form__group-2">
+                        <label class="form__label">Выезд</label>
+                        <input type="text" placeholder="ДД.ММ.ГГГГ">
+                    </div>
+                </div>
+                    <div class="form__group-3">
+                        <label class="form__label">Гости</label>
+                        <input type="text" placeholder="Сколько гостей" class="form__input">
+                    </div>  
+                    <input type="submit" value="Подобрать номер" class="search-button">
         </form>
     </section>
 </body>
