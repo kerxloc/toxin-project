@@ -37,11 +37,30 @@
 .icon {
     display: flex;
     align-items: center;
-&__expand {
+&__expand-nav {
     font-family: $icon-font;
     font-size: 24px;
     line-height: 20px;
+    color: rgba(31, 32, 65, .5);
     }
+&__expand-input {
+    font-family: $icon-font;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(31, 32, 65, .5);
+    margin-left: -38px;
+    cursor: pointer;
+}
+&__arrow {
+    font-family: $icon-font;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+    margin-left: -66px;
+    text-align: center;
+    cursor: pointer;
+}
 }
 .button {
     margin: 18px -1px;
@@ -107,7 +126,7 @@
         margin: -1px 0 0 28px;
     }
     &__group-2 {
-        margin: -1px 0 0 18px;
+        margin: -1px 0 0 32px;
     }
     &__group-3 {
         margin: 17px 0 1px 28px;
@@ -120,6 +139,7 @@ input {
 }
 input::placeholder {
    @include placeholder-style;
+   padding-left: 14px;
 }
 
 .search-button {
