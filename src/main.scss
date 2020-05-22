@@ -35,28 +35,20 @@
     display: flex;
     align-items: center;
 &__expand-nav {
-    font-family: $icon-font;
-    font-size: 24px;
-    line-height: 20px;
-    color: rgba(31, 32, 65, .5);
+    @include expand-style(20px, none);
     }
 &__expand-input {
-    font-family: $icon-font;
-    font-size: 24px;
-    line-height: 24px;
-    text-align: center;
-    color: rgba(31, 32, 65, .5);
+    @include expand-style(24px, center);
     margin-left: -38px;
-    cursor: pointer;
 }
-&__arrow {
-    font-family: $icon-font;
-    font-size: 24px;
-    line-height: 24px;
-    color: #fff;
+&__arrow-button {
+    @include arrow-style;
     margin-left: -66px;
-    text-align: center;
-    cursor: pointer;
+    color: #fff;
+}
+&__arrow-input {
+    @include arrow-style;
+    margin-left: -38px;
 }
 }
 .button {
@@ -224,5 +216,22 @@ input::placeholder {
             color: rgba(31, 32, 65, .25);
             line-height: 171%;
         }
+    }
+}
+
+.footer {
+    margin-top: -4px;
+    height: 70px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, .1);
+    border-top: 1px solid rgba(31, 32, 65, .2);
+    display: flex;
+    &__copyright{
+        font-family: $main-font;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(31, 32, 65, .75);
+        margin: 28px 681px 26px 140px;
     }
 }

@@ -45,3 +45,20 @@
     line-height: 17px;
     color: rgba(31, 32, 65, .5);
 }
+
+@mixin arrow-style {
+    font-family: $icon-font;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+
+@mixin expand-style($line-height, $text-align) {
+    font-family: $icon-font;
+    font-size: 24px;
+    color: rgba(31, 32, 65, .5);
+    cursor: pointer;
+    line-height: $line-height;
+    text-align: $text-align;
+}
