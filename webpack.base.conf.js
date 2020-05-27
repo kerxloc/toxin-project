@@ -68,7 +68,7 @@ module.exports = {
           },
 
           {
-            test: /\.(woff|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/,
+            test: /\.(woff|ttf|svg|)(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
