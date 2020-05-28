@@ -51,6 +51,7 @@
 &__arrow-input {
     @include arrow-style;
     margin-left: -38px;
+    margin-top: 22px;
 }
 }
 .button {
@@ -202,9 +203,9 @@ input::placeholder {
         line-height: 15px;
         text-transform: uppercase;
         color: #1f2041;
+        margin-bottom: 20px;
     }
     &__subtitle {
-        margin: 20px 0 21px;
         font-size: 14px;
         line-height: 171%;
         color: rgba(31, 32, 65, .75);
@@ -213,6 +214,7 @@ input::placeholder {
         @include input-style;
         width: 260px;
         margin-left: -1px;
+        margin-top: 21px;
         &::placeholder {
             color: rgba(31, 32, 65, .25);
             line-height: 171%;
