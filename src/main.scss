@@ -6,23 +6,26 @@
 
 .header {
     height: 70px;
-    max-width: 1440px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, .05);
     background-color: #fff;
+}
+.container {
+    max-width: 1440px;
     display: flex;
     align-items: center;
     margin: 0 auto;
 }
-
-.top-logo {
+.header-logo {
+    display: flex;
+    align-items: center;
     &__img {
-        margin: 15px 12px 16px 140px;
+        margin: 0 0 2px 140px;
     }
     &__text {
-        margin: 32px 285px 29px -4px;
+        margin: 0 284px 2px 12px;
     }
 }
-.top-nav {
+.header-menu {
       display: flex;
       align-items: center; 
       margin: 26px 2px;
@@ -56,7 +59,7 @@
 }
 }
 .button {
-    margin: 18px -1px;
+    margin: 18px 0 20px 0;
     height: 34px;
     &__login {
         @include buttons-style;
@@ -66,6 +69,10 @@
         border-style: solid;
         color: #bc9cff;
         margin-left: 20px;
+        &:hover {
+            background: $main-gradient;
+            color: #fff;
+        }
     }
     &__registration {
         @include buttons-style;
@@ -73,15 +80,24 @@
         border-style: none;
         background: $main-gradient;
         color: #fff;
-        margin-left: 16px;
+        margin-left: 20px;
+        &:hover {
+            background: #fff;
+            color: #bc9cff;
+            border-color: #bc9cff;
+            border-style: solid;
+        }
     }
 }
 
 .main-img {
-    width: 100%;
+    max-width: 100%;
     height: 830px;
 }
-
+.main {
+    display: flex;
+    flex-direction: column;
+}
 .search-form {
     height: 374px;
     width: 380px;
@@ -98,7 +114,7 @@
 
 .form {
     &__title {
-        font-family: $main-font; //without quicksand font
+        font-family: $mainf-bold; //without quicksand font
         font-weight: bold;
         font-size: 24px;
         line-height: 30px;
@@ -113,28 +129,31 @@
         margin: 1px 0 3px;
     }
     &__input {
-        width: 320px;
+        @include input-style;
+        width: 150px;
+        &::placeholder {
+            @include placeholder-style;
+            padding-left: 14px;
+        }
+        &_large {
+            @include input-style;
+            width: 320px;
+            &::placeholder {
+                @include placeholder-style;
+                padding-left: 14px;
+            }
+        }
     }
     &__group-1 {
         margin: -1px 0 0 28px;
     }
     &__group-2 {
-        margin: -1px 0 0 32px;
+        margin: -1px 0 0 28px;
     }
     &__group-3 {
         margin: 17px 0 1px 28px;
     }
 }
-
-input {
-    width: 150px;
-    @include input-style;
-}
-input::placeholder {
-   @include placeholder-style;
-   padding-left: 14px;
-}
-
 .search-button {
     @include buttons-style;
     height: 44px;
@@ -143,6 +162,7 @@ input::placeholder {
     color: #fff;
     text-align: center;
     margin: 28px 29px 30px;
+    border: none;
 }
 .promo-main {
     @include promo-style;
@@ -219,6 +239,7 @@ input::placeholder {
         &::placeholder {
             color: rgba(31, 32, 65, .25);
             line-height: 171%;
+            padding-right: -20px;
         }
     }
 }
@@ -226,7 +247,7 @@ input::placeholder {
 .footer {
     margin-top: -4px;
     height: 70px;
-    max-width: 1440px;
+    width: 100%;
     background: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, .1);
     border-top: 1px solid rgba(31, 32, 65, .2);
