@@ -5,36 +5,79 @@
 @import './assets/scss/fa-scss/brands.scss';
 
 .header {
-    height: 70px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, .05);
     background-color: #fff;
+    &-content {
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 .container {
-    max-width: 1440px;
-    display: flex;
-    align-items: center;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+    @media (max-width: $screen-xl) {
+        max-width: $screen-lg;
+    }
+    @media (max-width: $screen-lg) {
+        max-width: $screen-md;
+    }
+}
+@media (max-width: $screen-lg) {
+    .header-burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+            &::before, &::after {
+                content: '';
+                background-color: #000;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+            }
+            &::before {
+                top: 0;
+            }
+            &::after {
+                bottom: 0;
+            }
+            span {
+                position: absolute;
+                background-color: #000;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                top: 9px;
+            }
+    }
 }
 .header-logo {
     display: flex;
     align-items: center;
-    &__img {
-        margin: 0 0 2px 140px;
-    }
-    &__text {
-        margin: 0 284px 2px 12px;
-    }
 }
 .header-menu {
       display: flex;
       align-items: center; 
-      margin: 26px 2px;
+      margin-left: 283px;
     &__link {
         @include link-style;
         margin-right: 20px;
+        &:last-child {
+            margin: 0;
+        }
+        &:hover {
+            color: #bc9cff;
+        }
     }
-    &__link:last-child {
-        margin: 0;
+    @media (max-width: $screen-xl) {
+        margin-left: 75px;
+    }
+    @media (max-width: $screen-lg) {
+        display: none;
     }
 }
 .icon {
@@ -42,6 +85,9 @@
     align-items: center;
 &__expand-nav {
     @include expand-style(20px, none);
+    &:hover {
+        color: #bc9cff;
+    }
     }
 &__expand-input {
     @include expand-style(24px, center);
@@ -59,7 +105,6 @@
 }
 }
 .button {
-    margin: 18px 0 20px 0;
     height: 34px;
     &__login {
         @include buttons-style;
@@ -68,7 +113,7 @@
         border-color: #bc9cff;
         border-style: solid;
         color: #bc9cff;
-        margin-left: 20px;
+        margin-left: 25px;
         &:hover {
             background: $main-gradient;
             color: #fff;
@@ -81,6 +126,7 @@
         background: $main-gradient;
         color: #fff;
         margin-left: 20px;
+        margin-right: 20px;
         &:hover {
             background: #fff;
             color: #bc9cff;
@@ -88,15 +134,20 @@
             border-style: solid;
         }
     }
-}
-
-.main-img {
-    max-width: 100%;
-    height: 830px;
+    @media (max-width: $screen-lg) {
+        display: none;
+    }
 }
 .main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+}
+.main-img {
+    width: 100%;
+    height: 830px;
+    object-fit: cover;
+    grid-column: 1 / 4;
+    grid-row: 1;
 }
 .search-form {
     height: 374px;
@@ -105,14 +156,13 @@
     border: 1px solid rgba(0,0,0, .12);
     border-radius: 4px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, .2);
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 140px;
-    top: 140px;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+    margin-top: 70px;
 }
 
-.form {
+.form-inner {
     &__title {
         font-family: $mainf-bold; //without quicksand font
         font-weight: bold;
@@ -169,55 +219,63 @@
     width: 297px;
     height: 48px;
     text-align: right;
-    position: absolute;
-    left: 1009px;
-    top: 834px;
+    grid-column: 3;
+    grid-row: 1;
+    align-self: end;
+    margin: 0 134px 20px 28px;
 }
 
 .bottom {
-    height: 372px;
-    max-width: 1440px;
     background: #fff;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, .1);
-    display: flex;
+    &-content {
+        min-height: 372px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-content: center;
+        grid-column-gap: 38px;
+        @media (max-width: $screen-lg) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 20px;
+            grid-template-areas: "promo promo promo";
+        }
+    }
 }
-.bottom-logo {
-    &__img {
-        margin: 96px 12px 20px 140px;
+.bottom-promo {
+    &__logo {
+        margin-top: 6px;
     }
     &__text {
-        margin: 0px 283px 33px -4px;
+        @include promo-style;
+        height: 72px;
+        width: 260px;
     }
-}
-.promo-bottom {
-    @include promo-style;
-    height: 72px;
-    width: 260px;
-    margin: -5px 0px 0px 140px;
+    @media (max-width: $screen-lg) {
+        grid-area: promo;
+        grid-column: span 2;
+    }
 }
 .bottom-nav {
     display: flex;
     flex-direction: column;
-    margin-right: -12px;
     &__title {
         font-family: $mainf-bold;
         font-size: 12px;
         line-height: 15px;
         text-transform: uppercase;
         color: #1f2041;
-        margin: 100px 117px 21px -89px;
+        margin-bottom: 20px;
     }
     &__link {
         @include link-style;
-        margin: 1px 160px 20px -90px;
-    }
-    &__distant {
-        margin-left: 35px;
+        margin-bottom: 20px;
+        &:hover {
+            color: #bc9cff;
+        }
     }
 }
 .subscription {
         font-family: $main-font;
-        margin: 90px 0 0 -54px;
     &__title {
         font-family: $mainf-bold;
         font-size: 12px;
@@ -234,32 +292,37 @@
     &__input {
         @include input-style;
         width: 260px;
-        margin-left: -1px;
         margin-top: 21px;
         &::placeholder {
             color: rgba(31, 32, 65, .25);
             line-height: 171%;
-            padding-right: -20px;
+            padding-left: 8px;
+        }
+        @media (max-width: $screen-lg) {
+            height: 35px;
+            width: 235px;
         }
     }
 }
 
 .footer {
     margin-top: -4px;
-    height: 70px;
-    width: 100%;
     background: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, .1);
     border-top: 1px solid rgba(31, 32, 65, .2);
-    display: flex;
-    &__copyright {
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 70px;
+    }
+    &-copyright {
         font-family: $main-font;
         font-size: 14px;
         line-height: 17px;
         color: rgba(31, 32, 65, .75);
-        margin: 28px 677px 26px 139px;
     }
-    &__socials {
-        margin: 23px 0;
+    &-socials {
+        margin-right: -15px;
     }
 }
