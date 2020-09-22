@@ -6,7 +6,7 @@
     <title>Toxin</title>
 </head>
 <body>
-    <header class="header">
+    <header class="header header__shadow">
         <div class="container">
             <div class="header-content">
                 <div class="header-logo">
@@ -19,11 +19,13 @@
                     <a href="#" class="header-menu__link">Новости</a>
                     <a href="#" class="header-menu__link icon">Соглашения<span class="icon__expand-nav">expand_more</span></a>
                 </nav>
-                    <button class="button button__login">Войти</button>
-                    <button class="button button__registration">Зарегистрироваться</button>
-                    <a href="#" class="header-burger">
+                <div class="header__button button">
+                    <button class="button__login" data-da="header-menu, last, 992"><a href="#">Войти</a></button>
+                    <button class="button__registration" data-da="header-menu, last, 992"><a href="#">Зарегистрироваться</a></button>
+                </div>
+                    <div href="#" class="header-burger">
                         <span></span>
-                    </a>
+                    </div>
             </div>
         </div>
     </header>
