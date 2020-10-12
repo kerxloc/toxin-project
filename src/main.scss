@@ -29,10 +29,13 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     @media (max-width: $screen-xl) {
-        max-width: $screen-lg;
+        max-width: 993px;
     }
     @media (max-width: $screen-lg) {
-        max-width: $screen-md;
+        max-width: 768px;
+    }
+    @media (max-width: $screen-md) {
+        max-width: 577px;
     }
 }
 @media (max-width: $screen-lg) {
@@ -97,11 +100,9 @@ body {
             color: #bc9cff;
         }
         @media (max-width: $screen-lg) {
-            margin: 0 80px 15px 0;
-            color: #fff; 
-            &:last-child {
-                margin-right: 80px;
-            }
+            margin: 0 0px 30px 0;
+            color: #fff;
+            text-decoration: underline; 
         }
     }
     @media (max-width: $screen-xl) {
@@ -110,14 +111,14 @@ body {
     @media (max-width: $screen-lg) {
         margin: 0;
         position: fixed;
-        top: -120%;
+        top: -150%;
         left: 0;
         width: 100%;
         height: 100%;
         z-index: 3;
         flex-direction: column;
-        align-items: flex-end;
-        padding: 70px 0px 0px 0px;
+        align-items: center;
+        padding: 100px 0px 0px 0px;
         transition: all 0.3s ease 0s;
         background-color: rgba(28, 36, 42, 0.8);
         overflow: auto;
@@ -131,7 +132,7 @@ body {
     align-items: center;
 &__expand-nav {
     @include expand-style(20px, none);
-    &:hover {
+    &:hover { 
         color: #bc9cff;
     }
     @media (max-width: $screen-lg) {
@@ -141,16 +142,28 @@ body {
 &__expand-input {
     @include expand-style(24px, center);
     margin-left: -38px;
+    transform: rotate(-5deg);
+    @media (max-width: $screen-md) {
+        font-size: 20px;
+        margin-left: -31px;
+    }
 }
 &__arrow-button {
     @include arrow-style;
     margin-left: -66px;
     color: #fff;
+    @media (max-width: $screen-md) {
+        font-size: 20px;
+        margin-left: -55px;
+    }
 }
 &__arrow-input {
     @include arrow-style;
-    margin-left: -38px;
-    margin-top: 22px;
+    margin: 22px 0 0 -38px;
+    @media (max-width: $screen-md) {
+        font-size: 20px;
+        margin: 15px 0 0 -30px;
+    }
 }
 }
 .button {
@@ -168,6 +181,7 @@ body {
             color: #fff;
             @media (max-width: $screen-lg) {
                 background: none;
+                color: #bc9cff;
             }
         }
         @media (max-width: $screen-lg) {
@@ -199,16 +213,10 @@ body {
         }
     }
 }
-.main {
-    //display: grid;
-    //grid-template-columns: 1.2fr 1fr 1fr;
-}
+
 .main-img {
     width: 100%;
     height: 830px;
-    //object-fit: cover;
-    //grid-column: 1 / 4;
-    //grid-row: 1;
 }
 .search-form {
     height: 374px;
@@ -216,17 +224,13 @@ body {
     background: #fff;
     border: 1px solid rgba(0,0,0, .12);
     border-radius: 4px;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
     position: absolute;
     top: 140px;
-    //grid-column: 1;
-    //grid-row: 1;
-    //justify-self: end;
-    //margin-top: 70px;
-    @media (max-width: $screen-lg) {
-        //grid-column: 3;
-        //justify-self: start;
-    }
+    @media (max-width: $screen-md) {
+        width: 280px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    } 
 }
 
 .form-inner {
@@ -237,6 +241,10 @@ body {
         line-height: 30px;
         color: #1f2041;
         margin: 40px 30px 20px;
+        @media (max-width: $screen-md) {
+            font-size: 20px;
+            margin: 40px 18px 20px;
+        }
     }
     &__row {
         display: flex;
@@ -244,6 +252,9 @@ body {
     &__label {
         @include label-style;
         margin: 1px 0 3px;
+        @media (max-width: $screen-md) {
+            font-size: 10px;
+        }
     }
     &__input {
         @include input-style;
@@ -251,6 +262,13 @@ body {
         &::placeholder {
             @include placeholder-style;
             padding-left: 14px;
+                 @media (max-width: $screen-md) {
+                    font-size: 11px;
+                    padding-left: 10px;
+            }
+        }
+        @media (max-width: $screen-md) {
+            width: 110px;
         }
         &_large {
             @include input-style;
@@ -258,17 +276,30 @@ body {
             &::placeholder {
                 @include placeholder-style;
                 padding-left: 14px;
+                @media (max-width: $screen-md) {
+                    font-size: 11px;
+                    padding-left: 10px;
+                }
+            }
+            @media (max-width: $screen-md) {
+                width: 240px;
             }
         }
     }
     &__group-1 {
         margin: -1px 0 0 28px;
+        @media (max-width: $screen-md) {
+            margin: -1px 0 0 18px;
+        }
     }
     &__group-2 {
         margin: -1px 0 0 28px;
     }
     &__group-3 {
         margin: 17px 0 1px 28px;
+        @media (max-width: $screen-md) {
+            margin: 17px 0 1px  18px;
+        }
     }
 }
 .search-button {
@@ -280,19 +311,22 @@ body {
     text-align: center;
     margin: 28px 29px 30px;
     border: none;
+    @media (max-width: $screen-md) {
+        width: 240px;
+        margin: 28px 20px 30px;
+        font-size: 10px;
+    }
 }
 .promo {
     &__text {
     @include promo-style;
+    @include adaptiv-font(14, 12);
     width: 297px;
     height: 48px;
     text-align: right;
     position: absolute;
     top: 834px; 
-    //grid-column: 3;
-    //grid-row: 1;
-    //align-self: end;
-    //margin: 0 134px 20px 28px;
+    right: 20px;
     }
 }
 
@@ -310,6 +344,12 @@ body {
             grid-column-gap: 20px;
             grid-template-areas: "promo promo promo";
         }
+        @media (max-width: $screen-md) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-areas: "promo";
+            justify-items: center;
+            grid-column-gap: 0;
+        }
     }
 }
 .bottom-promo {
@@ -320,15 +360,24 @@ body {
         @include promo-style;
         height: 72px;
         width: 260px;
+        @media (max-width: $screen-md) {
+            font-size: 12px;
+        }
     }
     @media (max-width: $screen-lg) {
         grid-area: promo;
         grid-column: span 2;
     }
+    @media (max-width: $screen-md) {
+        grid-column: span 1;
+    }
 }
 .bottom-nav {
     display: flex;
     flex-direction: column;
+    @media (max-width: $screen-md) {
+        align-items: center;
+    }
     &__title {
         font-family: $mainf-bold;
         font-size: 12px;
@@ -336,10 +385,19 @@ body {
         text-transform: uppercase;
         color: #1f2041;
         margin-bottom: 20px;
+        @media (max-width: $screen-md) {
+            font-size: 10px;
+            margin-bottom: 10px;
+        }
+
     }
     &__link {
         @include link-style;
         margin-bottom: 20px;
+        @media (max-width: $screen-md) {
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
         &:hover {
             color: #bc9cff;
         }
@@ -354,11 +412,17 @@ body {
         text-transform: uppercase;
         color: #1f2041;
         margin-bottom: 20px;
+        @media (max-width: $screen-md) {
+            font-size: 10px;
+        }
     }
     &__subtitle {
         font-size: 14px;
         line-height: 171%;
         color: rgba(31, 32, 65, .75);
+        @media (max-width: $screen-md) {
+            font-size: 12px;
+        }
     }
     &__input {
         @include input-style;
@@ -368,16 +432,21 @@ body {
             color: rgba(31, 32, 65, .25);
             line-height: 171%;
             padding-left: 8px;
+            @media (max-width: $screen-md) {
+                font-size: 11px;
+            }
         }
         @media (max-width: $screen-lg) {
             height: 35px;
             width: 235px;
         }
+        @media (max-width: $screen-md) {
+            margin-bottom: 10px;
+        }
     }
 }
 
 .footer {
-    margin-top: -4px;
     background: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, .1);
     border-top: 1px solid rgba(31, 32, 65, .2);
@@ -386,15 +455,29 @@ body {
         align-items: center;
         justify-content: space-between;
         min-height: 70px;
+        @media (max-width: $screen-md) {
+            flex-direction: column;
+            justify-content: center;
+        }
     }
     &-copyright {
         font-family: $main-font;
         font-size: 14px;
         line-height: 17px;
         color: rgba(31, 32, 65, .75);
+        @media (max-width: $screen-md) {
+            font-size: 11px;
+            order: 2;
+            margin-top: 15px;
+            line-height: normal;
+        }
     }
     &-socials {
         margin-right: -15px;
+        @media (max-width: $screen-md) {
+            order: 1;
+            margin-right: 0;
+        }
     }
 }
 
