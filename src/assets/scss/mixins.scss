@@ -10,6 +10,18 @@
     cursor: pointer;
 }
 
+@mixin guest-button {
+    font-family: $mainf-bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #bc9cff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
 @mixin label-style {
     display: block;
     font-family: $mainf-bold;
@@ -63,6 +75,24 @@
     line-height: $line-height;
     text-align: $text-align;
 }
+
+@mixin guest-text {
+    font-family: $mainf-bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #1F2041;
+}
+
+@mixin guest-circle {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 // Adaptiv font
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {
