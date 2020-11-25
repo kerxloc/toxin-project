@@ -265,15 +265,38 @@ body {
             padding: 0 0 0 20px;
         }
     }
-    &__circle {
-        @include guest-circle;
+    &__circle-plus {
+        @include guest-circle(rgba(31, 32, 65, .5));
         margin-bottom: 7px;
     }
+    &__circle-minus {
+        @include guest-circle(rgba(31, 32, 65, .25));
+        margin-bottom: 7px;
+    }
+.plus-button {
+    &__text {
+        font-family: $main-font;
+        font-size: 18px;
+        text-align: center;
+        color: rgba(31, 32, 65, 0.5);
+        user-select: none;
+    }
+}
+.minus-button {
+    &__text {
+        font-family: $main-font;
+        font-size: 18px;
+        text-align: center;
+        color: rgba(31, 32, 65, 0.25);
+        user-select: none;
+    }
+}
     &__counter {
         @include guest-text;
         margin-bottom: 28px;
     }
 }
+
 .main-img {
     width: 100%;
     height: 830px;
@@ -318,13 +341,11 @@ body {
     }
     &__input {
         @include input-style;
-        width: 150px;
+        width: 135px;
         &::placeholder {
             @include placeholder-style;
-            padding-left: 14px;
                  @media (max-width: $screen-md) {
                     font-size: 11px;
-                    padding-left: 10px;
             }
         }
         @media (max-width: $screen-md) {
@@ -332,13 +353,11 @@ body {
         }
         &_large {
             @include input-style;
-            width: 320px;
+            width: 305px;
             &::placeholder {
                 @include placeholder-style;
-                padding-left: 14px;
                 @media (max-width: $screen-md) {
                     font-size: 11px;
-                    padding-left: 10px;
                 }
             }
             @media (max-width: $screen-md) {
@@ -484,12 +503,11 @@ body {
     }
     &__input {
         @include input-style;
-        width: 260px;
+        width: 245px;
         margin-top: 21px;
         &::placeholder {
             color: rgba(31, 32, 65, .25);
             line-height: 171%;
-            padding-left: 8px;
             @media (max-width: $screen-md) {
                 font-size: 11px;
             }

@@ -36,6 +36,10 @@
     background: #fff;
     border: 1px solid rgba(31, 32, 65, .25);
     border-radius: 4px;
+    font-family: $main-font;
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.75);
+    padding-left: 15px;
 }
 
 @mixin placeholder-style {
@@ -83,14 +87,16 @@
     color: #1F2041;
 }
 
-@mixin guest-circle {
+@mixin guest-circle($border-color) {
     width: 30px;
     height: 30px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 1px solid;
+    border-color: $border-color;
     border-radius: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 // Adaptiv font
