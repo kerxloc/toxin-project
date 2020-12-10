@@ -14,6 +14,8 @@ let countText3 = document.querySelector("#text-3");
 let guestApplyButton = document.querySelector(".guest-inner__button_apply");
 let guestClearButton = document.querySelector(".guest-inner__button_clear");
 let guestInput = document.querySelector(".form-inner__input_large");
+let guestForm = document.querySelector(".form-inner__guest-dropdown");
+let expandInputIcons = document.querySelectorAll(".icon__expand-input");
 
  
 countPlus.onclick = (e) => {
@@ -22,6 +24,7 @@ countPlus.onclick = (e) => {
         countText1.textContent++;
         minusButtons[0].style.borderColor = 'rgba(31, 32, 65, 0.5)';
         minusButtons[0].children[0].style.color = 'rgba(31, 32, 65, 0.5)';
+
     } else if (target.getAttribute("id") == "Pbutton-2") {
         countText2.textContent++;
         minusButtons[1].style.borderColor = 'rgba(31, 32, 65, 0.5)';
@@ -64,22 +67,29 @@ countMinus.onclick = (e) => {
 }
 
 guestApplyButton.onclick = () => {
-    let a = parseInt(countText1.textContent);
-    let b = parseInt(countText2.textContent);
-    let c = parseInt(countText3.textContent);
-    let countResult = a + b + c;
-    if (countResult == 1 || countResult == 21 || countResult == 31) {
+    let countInt1 = parseInt(countText1.textContent);
+    let countInt2 = parseInt(countText2.textContent);
+    let countInt3 = parseInt(countText3.textContent);
+    let countResult = countInt1 + countInt2 + countInt3;
+    if (countResult == 0) {
+        guestInput.setAttribute("value", "Введите хотя бы одного гостя");
+    } else if (countResult == 1 || countResult == 21 || countResult == 31) {
         guestInput.setAttribute("value", countResult + " гость");
+        guestForm.classList.toggle("form-inner__guest-dropdown_active");
     } else if (countResult >= 2 && countResult <= 4 || countResult >= 22 && countResult <= 24) {
         guestInput.setAttribute("value", countResult + " гостя");
+        guestForm.classList.toggle("form-inner__guest-dropdown_active");
     } else {
         guestInput.setAttribute("value", countResult + " гостей");
+        guestForm.classList.toggle("form-inner__guest-dropdown_active");
     }
 }
 guestClearButton.onclick = () => {
     guestInput.removeAttribute("value");
 }
 
+guestInput.onclick = () => guestForm.classList.toggle("form-inner__guest-dropdown_active");
+expandInputIcons[2].onclick = () => guestForm.classList.toggle("form-inner__guest-dropdown_active");
 
 burger.onclick = () => {
     burger.classList.toggle("active");

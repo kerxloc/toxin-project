@@ -40,6 +40,7 @@
     font-size: 14px;
     color: rgba(31, 32, 65, 0.75);
     padding-left: 15px;
+    outline-color: #bc9cff;
 }
 
 @mixin placeholder-style {
@@ -78,6 +79,10 @@
     cursor: pointer;
     line-height: $line-height;
     text-align: $text-align;
+    user-select: none;
+    &:hover {
+        color: #bc9cff;
+    }
 }
 
 @mixin guest-text {
