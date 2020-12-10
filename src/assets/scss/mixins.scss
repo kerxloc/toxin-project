@@ -10,7 +10,7 @@
     cursor: pointer;
 }
 
-@mixin guest-button {
+@mixin ApplyClearButtons {
     font-family: $mainf-bold;
     font-size: 12px;
     line-height: 15px;
