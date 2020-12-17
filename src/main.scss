@@ -457,10 +457,36 @@ body {
                     color: #fff;
                 }
             }
+            .selected-day_1 {
+                background-color: #bc9cff;
+                border-radius: 22px;
+                color: #fff;
+                position: relative;
+                /* &::after {
+                    content: '';
+                    display: block;
+                    height: 40px;
+                    width: 150px;
+                    position: absolute;
+                    left: 0;
+                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                    opacity: 0.25;
+                    border-radius: 22px;
+                }*/
+            }
+            .selected-day_2 {
+                background-color: #bc9cff;
+                border-radius: 22px;
+                color: #fff;
+            } 
             .today {
                 background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
                 border-radius: 22px;
                 color: #fff;
+                cursor: pointer;
+                &:hover {
+                    filter: brightness(105%);
+                }
             }
             .prev-date, .next-date {
                 color: rgba(31, 32, 65, .25);
@@ -470,8 +496,8 @@ body {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 15px;
-            padding: 10px 15px 0;
+            //margin-top: 15px;
+            padding: 0 15px;
             .calendar-footer {
                 &__button_apply {
                     @include ApplyClearButtons;
@@ -668,6 +694,11 @@ body {
     }
     &-socials {
         margin-right: -15px;
+        .fab {
+            &:hover {
+                filter: brightness(120%);
+            }
+        }
         @media (max-width: $screen-md) {
             order: 1;
             margin-right: 0;

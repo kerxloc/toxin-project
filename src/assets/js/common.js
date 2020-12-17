@@ -1,4 +1,5 @@
 import './dynamic_adaptive';
+import './calendar';
 
 let burger = document.querySelector(".header-burger");
 let menu = document.querySelector(".header-menu");

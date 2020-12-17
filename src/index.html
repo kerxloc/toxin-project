@@ -39,14 +39,14 @@
                     <div class="form-inner__group-1">
                             <label class="form-inner__label">Прибытие</label>
                         <div class="icon">
-                            <input type="text" class="form-inner__input" placeholder="ДД.ММ.ГГГГ">
+                            <input type="text" class="form-inner__input" autocomplete="off" placeholder="ДД.ММ.ГГГГ" id="arrival-input">
                             <i class="icon__expand-input">expand_more</i>
                         </div>
                         <div class="form-inner__calendar calendar-inner">
                             <div class="calendar-inner__header">
-                                <i class="icon__arrow-calendar material-icons">arrow_back</i>
-                                <span class="calendar-inner__month">Август 2019</span>
-                                <i class="icon__arrow-calendar material-icons">arrow_forward</i>
+                                <i class="icon__arrow-calendar material-icons" id="arrow-prev">arrow_back</i>
+                                <span class="calendar-inner__month"></span>
+                                <i class="icon__arrow-calendar material-icons" id="arrow-next">arrow_forward</i>
                             </div>
                             <div class="calendar-inner__main">
                                 <div class="calendar-inner__weekdays">
@@ -59,41 +59,7 @@
                                     <span>Вс</span>
                                 </div>
                                 <div class="calendar-inner__days">
-                                    <div class="prev-date">29</div>
-                                    <div class="prev-date">30</div>
-                                    <div class="prev-date">31</div>
-                                    <div>1</div>
-                                    <div>2</div>
-                                    <div>3</div>
-                                    <div>4</div>
-                                    <div>5</div>
-                                    <div>6</div>
-                                    <div>7</div>
-                                    <div class="today">8</div>
-                                    <div>9</div>
-                                    <div>10</div>
-                                    <div>11</div>
-                                    <div>12</div>
-                                    <div>13</div>
-                                    <div>14</div>
-                                    <div>15</div>
-                                    <div>16</div>
-                                    <div>17</div>
-                                    <div>18</div>
-                                    <div>19</div>
-                                    <div>20</div>
-                                    <div>21</div>
-                                    <div>22</div>
-                                    <div>23</div>
-                                    <div>24</div>
-                                    <div>25</div>
-                                    <div>26</div>
-                                    <div>27</div>
-                                    <div>28</div>
-                                    <div>29</div>
-                                    <div>30</div>
-                                    <div>31</div>
-                                    <div class="next-date">1</div>
+                                     
                                 </div>
                             </div>
                             <div class="calendar-inner__footer calendar-footer">
@@ -105,7 +71,7 @@
                     <div class="form-inner__group-2">
                             <label class="form-inner__label">Выезд</label>
                         <div class="icon">
-                            <input type="text" class="form-inner__input" placeholder="ДД.ММ.ГГГГ">
+                            <input type="text" class="form-inner__input" autocomplete="off" placeholder="ДД.ММ.ГГГГ" id="departure-input">
                             <i class="icon__expand-input">expand_more</i>
                         </div>
                     </div>

@@ -20,6 +20,9 @@
     background: none;
     border: none;
     outline: none;
+    &:hover {
+        filter: brightness(110%);
+    }
 }
 
 @mixin label-style {
@@ -70,6 +73,10 @@
     line-height: 24px;
     text-align: center;
     cursor: pointer;
+    user-select: none;
+    &:hover {
+        filter: brightness(120%);
+    }
 }
 
 @mixin expand-style($line-height, $text-align) {
