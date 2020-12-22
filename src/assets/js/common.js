@@ -1,9 +1,5 @@
 import './dynamic_adaptive';
-import './calendar';
-
-let burger = document.querySelector(".header-burger");
-let menu = document.querySelector(".header-menu");
-let body = document.querySelector("body");
+//import './calendar';
 
 //guest dropdown variables
 let countPlus = document.querySelector(".guest-inner__column-4");
@@ -91,12 +87,6 @@ guestClearButton.onclick = () => {
 
 guestInput.onclick = () => guestForm.classList.toggle("form-inner__guest-dropdown_active");
 expandInputIcons[2].onclick = () => guestForm.classList.toggle("form-inner__guest-dropdown_active");
-
-burger.onclick = () => {
-    burger.classList.toggle("active");
-    menu.classList.toggle("active");
-    body.classList.toggle("lock");
-};
 
 function ibg () {
     let ibg = document.querySelectorAll(".ibg");

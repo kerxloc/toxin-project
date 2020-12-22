@@ -1,0 +1,39 @@
+.footer {
+    background: #fff;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, .1);
+    border-top: 1px solid rgba(31, 32, 65, .2);
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 70px;
+        @media (max-width: $screen-md) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    &-copyright {
+        font-family: $main-font;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(31, 32, 65, .75);
+        @media (max-width: $screen-md) {
+            font-size: 11px;
+            order: 2;
+            margin-top: 15px;
+            line-height: normal;
+        }
+    }
+    &-socials {
+        margin-right: -15px;
+        .fab {
+            &:hover {
+                filter: brightness(120%);
+            }
+        }
+        @media (max-width: $screen-md) {
+            order: 1;
+            margin-right: 0;
+        }
+    }
+}

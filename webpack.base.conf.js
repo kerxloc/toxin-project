@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -9,6 +10,9 @@ const PATHS = {
   dist: path.join(__dirname, './dist'),
   assets: 'assets/'
 }
+
+const PAGES_DIR = `${PATHS.src}/components`
+const PAGES = fs.readdirSync(PAGES_DIR).filter(filename => filename.endsWith('.pug'))
 
 module.exports = {
 
@@ -27,15 +31,29 @@ module.exports = {
         new MiniCssExtractPlugin({
           filename: `${PATHS.assets}css/[name].css`
         }),
-        new HtmlWebpackPlugin({
-          hash: false,
-          template: `${PATHS.src}/index.html`,
-          filename: './index.html'
-        }),
         new CopyWebpackPlugin([
           { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
           { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` }
-        ])
+        ]),
+        ...PAGES.map(page => new HtmlWebpackPlugin({
+          template: `${PAGES_DIR}/${page}`,
+          filename: `./${page.replace(/\.pug/,'.html')}`
+        })),
+        new HtmlWebpackPlugin({
+          template: `${PAGES_DIR}/header/header.pug`,
+          filename: 'header.html',
+          inject: true
+        }),
+        new HtmlWebpackPlugin({
+          template: `${PAGES_DIR}/bottom_block/bottom_block.pug`,
+          filename: 'bottom_block.html',
+          inject: true
+        }),
+        new HtmlWebpackPlugin({
+          template: `${PAGES_DIR}/footer/footer.pug`,
+          filename: 'footer.html',
+          inject: true
+        }),
       ],
       module: {
         rules: [
@@ -63,6 +81,11 @@ module.exports = {
             test: /\.js$/,
             loader: 'babel-loader',
             exclude: '/node_modules/'
+          },
+
+          {
+            test: /\.pug$/,
+            loader: 'pug-loader'
           },
 
           {

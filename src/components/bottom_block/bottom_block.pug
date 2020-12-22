@@ -1,0 +1,23 @@
+mixin listItem(title, href, ...links)
+    nav.bottom-nav
+        h2.bottom-nav__title= title
+        each item, link in links
+            a.bottom-nav__link(href= link)= item
+
+section.bottom
+    div.container
+        div.bottom-content
+            div.bottom-promo
+                img.bottom-promo__logo(src='./assets/img/Logo.svg')
+                p.bottom-promo__text 
+                    | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+            +listItem("Навигация", "#", "О нас", "Новости", "Служба поддержки", "Услуги")
+            +listItem("О нас", "#", "О сервисе", "Наша команда", "Вакансии", "Инвесторы")
+            +listItem("Служба поддержки", "#", "Соглашения", "Сообщества", "Связь с нами")
+            form.subscription(action='#')
+                h2.subscription__title Подписка
+                label.subscription__subtitle Получайте специальные<br>предложения и новости сервиса
+                div.icon
+                input.subscription__input(type="text" placeholder="Email")
+                i.icon__arrow-input.material-icons arrow_forward
+

@@ -1,0 +1,12 @@
+mixin socials(href, title, social_class)
+    a(href= href, title= title)
+        i.fab(class= social_class)
+
+footer.footer
+    div.container
+        div.footer-content
+            span.footer-copyright Copyright © 2018 Toxin отель. Все права защищены.
+            div.footer-socials
+                +socials("#", "twitter", "fa-twitter")
+                +socials("#", "twitter", "fa-facebook-square")
+                +socials("#", "twitter", "fa-instagram")
