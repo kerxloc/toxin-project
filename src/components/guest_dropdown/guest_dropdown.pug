@@ -1,0 +1,38 @@
+mixin text(column, title, id)
+    -var column
+    if column == 1
+        span.guest-inner__text= title
+    else if column == 3
+        span.guest-inner__counter(id=id)= title
+
+mixin buttons(button, id)
+    -var button
+    if button == "-"
+        div.guest-inner__circle-minus.minus-button(id=id)
+            span.minus-button__text -
+    else if button == "+"
+        div.guest-inner__circle-plus.plus-button(id=id)
+            span.plus-button__text +
+
+
+div.guest-dropdown.guest-inner
+    div.guest-inner__content
+        div.guest-inner__column-1
+            +text(1, "Взрослые", "")
+            +text(1, "Дети", "")
+            +text(1, "Младенцы", "")
+        div.guest-inner__column-2
+            +buttons("-", "Mbutton-1")
+            +buttons("-", "Mbutton-2")
+            +buttons("-", "Mbutton-3")
+        div.guest-inner__column-3
+            +text(3, "0", "text-1")
+            +text(3, "0", "text-2")
+            +text(3, "0", "text-3")
+        div.guest-inner__column-4
+            +buttons("+", "Pbutton-1")
+            +buttons("+", "Pbutton-2")
+            +buttons("+", "Pbutton-3")
+    div.guest-inner__button
+        button.guest-inner__button_clear Очистить
+        button.guest-inner__button_apply Принять

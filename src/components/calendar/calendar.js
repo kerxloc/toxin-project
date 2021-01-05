@@ -1,5 +1,7 @@
 const prevArrow = document.querySelector("#arrow-prev");
 const nextArrow = document.querySelector("#arrow-next");
+const calendarForm = document.querySelector(".calendar-outter");
+const expandInputIcons = document.querySelectorAll(".icon__expand-input");
 const arrivalInput = document.querySelector("#arrival-input");
 const departureInput = document.querySelector("#departure-input");
 const calendarClearButton = document.querySelector(".calendar-footer__button_clear");
@@ -96,8 +98,6 @@ const renderCalendar = () => {
         if (arrivalInput.getAttribute("value") == departureInput.getAttribute("value")) {
             alert("Значения не могу быть одинаковыми");
             removeInputValue();
-        } else if (arrivalInput.getAttribute("value") < departureInput.getAttribute("value")) {
-            alert("loh");
         }
     })
 }
@@ -123,5 +123,8 @@ nextArrow.addEventListener("click", () => {
     date.setMonth(date.getMonth() + 1);
     renderCalendar();
 });
+
+arrivalInput.addEventListener("click", () => calendarForm.classList.toggle("calendar-outter_active"));
+departureInput.addEventListener("click", () => calendarForm.classList.toggle("calendar-outter_active"));
 
 renderCalendar();

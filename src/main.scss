@@ -6,6 +6,8 @@
 @import './components/header/header.scss';
 @import './components/bottom_block/bottom_block.scss';
 @import './components/footer/footer.scss';
+@import './components/guest_dropdown/guest_dropdown.scss';
+@import './components/calendar/calendar.scss';
 
 body {
     height: 100%;
@@ -32,11 +34,17 @@ body {
         font-size: 20px;
         margin-left: -31px;
     }
+    transition: all 0.3s ease 0s;
+    &_active {
+        transform: rotate(-180deg);
+        transition: all 0.3s ease 0s;
+    }
 }
 &__arrow-button {
     @include arrow-style;
     margin-left: -66px;
     color: #fff;
+    z-index: 5;
     @media (max-width: $screen-md) {
         font-size: 20px;
         margin-left: -55px;
@@ -105,7 +113,7 @@ body {
     width: 100%;
     height: 830px;
 }
-.search-form {
+.form-outter {
     height: 374px;
     width: 380px;
     background: #fff;
@@ -169,235 +177,6 @@ body {
             }
         }
     }
-    &__guest-dropdown {
-        width: 320px;
-        height: 159px;  
-        position: absolute;
-        border: 1px solid rgba(31, 32, 65, 0.5);
-        background-color: #fff;
-        box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.3s ease 0s;
-        @media (max-width: $screen-md) {
-            width: 240px;
-        }
-            &_active {
-                visibility: visible;
-                transition: all 0.3s ease 0s;
-                opacity: 1;
-            }
-        .guest-inner {
-            &__content {
-                display: flex;
-            }
-            &__column-1 {
-                display: flex;
-                flex-direction: column;
-                margin: 13px 0 0 15px;
-            }
-            &__column-2 {
-                display: flex;
-                flex-direction: column;
-                margin: 7px 0 0 120px;
-                @media (max-width: $screen-md) {
-                    margin-left: 65px;
-                }
-                .minus-button {
-                    &__text {
-                        font-family: $main-font;
-                        font-size: 18px;
-                        text-align: center;
-                        color: rgba(31, 32, 65, 0.25);
-                        user-select: none;
-                    }
-                }
-            }
-            &__column-3 {
-                display: flex;
-                flex-direction: column;
-                margin: 13px 0 0 0;
-            }
-            &__column-4 {
-                display: flex;
-                flex-direction: column;
-                margin: 7px 0 0 0;
-                .plus-button {
-                    &__text {
-                        font-family: $main-font;
-                        font-size: 18px;
-                        text-align: center;
-                        color: rgba(31, 32, 65, 0.5);
-                        user-select: none;
-                    }
-                }
-            }
-            &__text {
-                @include guest-text;
-                margin-bottom: 25px;
-                @media (max-width: $screen-md) {
-                    font-size: 10px;
-                }
-            }
-            &__button {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-top: -5px;
-                @media (max-width: $screen-md) {
-                    margin-top: 10px;
-                }
-                &_clear {
-                    @include ApplyClearButtons;
-                    width: 72px;
-                    height: 15px;
-                    padding-left: 14px;
-                    @media (max-width: $screen-md) {
-                        font-size: 10px;
-                    }
-                }
-                &_apply {
-                    @include ApplyClearButtons;
-                    padding-right: 7px;
-                    @media (max-width: $screen-md) {
-                        font-size: 10px;
-                    }
-                }
-            }
-            &__circle-plus {
-                @include guest-circle(rgba(31, 32, 65, .5));
-                margin-bottom: 7px;
-                @media (max-width: $screen-md) {
-                    width: 25px;
-                    height: 25px;
-                }
-            }
-            &__circle-minus {
-                @include guest-circle(rgba(31, 32, 65, .25));
-                margin-bottom: 7px;
-                @media (max-width: $screen-md) {
-                    width: 25px;
-                    height: 25px;
-                }
-            }
-            &__counter {
-                @include guest-text;
-                margin: 0 10px 28px 10px;
-                @media (max-width: $screen-md) {
-                    font-size: 10px;
-                    margin: 0 10px 25px 10px;
-                }
-            }
-        }
-  }
-    &__calendar {
-        width: 320px;
-        height: 369px;
-        background: #fff;
-        border: 1px solid rgba(31, 32, 65, .25);
-        border-radius: 4px;
-        position: absolute;
-        top: 190px;
-        box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
-    .calendar-inner{
-        &__header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 20px 0;
-        }
-        &__month {
-            font-family: $mainf-bold;
-            font-size: 19px;
-            color: #1f2041;
-            line-height: 23px;
-        }
-        &__weekdays {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 30px;
-            padding: 0 31px;
-            span {
-                font-family: $mainf-bold;
-                color: #bc9cff;
-                font-size: 12px;
-                line-height: 15px;
-            }
-        }
-        &__days {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 10px 20px;
-            div {
-                font-family: $main-font;
-                font-size: 12px;
-                color: rgba(31, 32, 65, .5);
-                line-height: 15px;
-                width: 40px;
-                height: 40px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                &:hover:not(.today) {
-                    background-color: #bc9cff;
-                    border-radius: 22px;
-                    cursor: pointer;
-                    color: #fff;
-                }
-            }
-            .selected-day_1 {
-                background-color: #bc9cff;
-                border-radius: 22px;
-                color: #fff;
-                position: relative;
-                /* &::after {
-                    content: '';
-                    display: block;
-                    height: 40px;
-                    width: 150px;
-                    position: absolute;
-                    left: 0;
-                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                    opacity: 0.25;
-                    border-radius: 22px;
-                }*/
-            }
-            .selected-day_2 {
-                background-color: #bc9cff;
-                border-radius: 22px;
-                color: #fff;
-            } 
-            .today {
-                background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-                border-radius: 22px;
-                color: #fff;
-                cursor: pointer;
-                &:hover {
-                    filter: brightness(105%);
-                }
-            }
-            .prev-date, .next-date {
-                color: rgba(31, 32, 65, .25);
-            }
-        }
-        &__footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            //margin-top: 15px;
-            padding: 0 15px;
-            .calendar-footer {
-                &__button_apply {
-                    @include ApplyClearButtons;
-                }
-                &__button_clear {
-                    @include ApplyClearButtons;
-                }
-            }
-        }
-    }
-    }
     &__group-1 {
         margin: -1px 0 0 28px;
         @media (max-width: $screen-md) {
@@ -423,6 +202,9 @@ body {
     text-align: center;
     margin: 28px 29px 30px;
     border: none;
+    &:hover {
+        filter: brightness(105%);
+    }
     @media (max-width: $screen-md) {
         width: 240px;
         margin: 28px 20px 30px;

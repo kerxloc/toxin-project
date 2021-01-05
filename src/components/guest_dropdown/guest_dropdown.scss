@@ -1,0 +1,123 @@
+.guest-dropdown {
+    width: 320px;
+    height: 159px;  
+    position: absolute;
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    @media (max-width: $screen-md) {
+        width: 240px;
+    }
+        &_active {
+            visibility: visible;
+            transition: all 0.3s ease 0s;
+            opacity: 1;
+        }
+}
+
+.guest-inner {
+    &__content {
+        display: flex;
+    }
+    &__column-1 {
+        display: flex;
+        flex-direction: column;
+        margin: 13px 0 0 15px;
+    }
+    &__column-2 {
+        display: flex;
+        flex-direction: column;
+        margin: 7px 0 0 120px;
+        @media (max-width: $screen-md) {
+            margin-left: 65px;
+        }
+        .minus-button {
+            &__text {
+                font-family: $main-font;
+                font-size: 18px;
+                text-align: center;
+                color: rgba(31, 32, 65, 0.25);
+                user-select: none;
+            }
+        }
+    }
+    &__column-3 {
+        display: flex;
+        flex-direction: column;
+        margin: 13px 0 0 0;
+    }
+    &__column-4 {
+        display: flex;
+        flex-direction: column;
+        margin: 7px 0 0 0;
+        .plus-button {
+            &__text {
+                font-family: $main-font;
+                font-size: 18px;
+                text-align: center;
+                color: rgba(31, 32, 65, 0.5);
+                user-select: none;
+            }
+        }
+    }
+    &__text {
+        @include guest-text;
+        margin-bottom: 25px;
+        @media (max-width: $screen-md) {
+            font-size: 10px;
+        }
+    }
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: -5px;
+        @media (max-width: $screen-md) {
+            margin-top: 10px;
+        }
+        &_clear {
+            @include ApplyClearButtons;
+            width: 72px;
+            height: 15px;
+            padding-left: 14px;
+            @media (max-width: $screen-md) {
+                font-size: 10px;
+            }
+        }
+        &_apply {
+            @include ApplyClearButtons;
+            padding-right: 7px;
+            @media (max-width: $screen-md) {
+                font-size: 10px;
+            }
+        }
+    }
+    &__circle-plus {
+        @include guest-circle(rgba(31, 32, 65, .5));
+        margin-bottom: 7px;
+        z-index: 10;
+        @media (max-width: $screen-md) {
+            width: 25px;
+            height: 25px;
+        }
+    }
+    &__circle-minus {
+        @include guest-circle(rgba(31, 32, 65, .25));
+        margin-bottom: 7px;
+        @media (max-width: $screen-md) {
+            width: 25px;
+            height: 25px;
+        }
+    }
+    &__counter {
+        @include guest-text;
+        margin: 0 10px 28px 10px;
+        @media (max-width: $screen-md) {
+            font-size: 10px;
+            margin: 0 10px 25px 10px;
+        }
+    }
+}

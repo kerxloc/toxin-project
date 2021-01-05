@@ -1,33 +1,26 @@
-doctype html
-html(lang='ru')
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0')
-        title Toxin
-    body
-        header.header.header__shadow
-            div.container
-                div.header-content
-                    div.header-logo
-                        img.header-logo__img(src='./assets/img/Logo.svg')
-                    nav.header-menu
-                        -var services = 'Услуги'
-                        -var agreements = 'Соглашения'
-                        -var menu = {'О нас': '#', 'Услуги': '#', 'Вакансии': '#', 'Новости': '#', 'Соглашения': '#'}
-                        each val, key in menu 
-                            if services === key
-                                a.header-menu__link.icon(href=val)= key
-                                    span.icon__expand-nav expand_more
-                            else if agreements === key
-                                a.header-menu__link.icon(href=val)= key
-                                    span.icon__expand-nav expand_more
-                            else 
-                                a.header-menu__link(href=val)= key
-                    div.header__button.button
-                        a(href='#' data-da='header-menu, last, 992')
-                            button.button__login Войти
-                        a(href='#' data-da='header-menu, last, 992')
-                            button.button__registration Зарегистрироваться
-                    div.header-burger
-                        span
+header.header.header__shadow
+    div.container
+        div.header-content
+            div.header-logo
+                img.header-logo__img(src='./assets/img/Logo.svg')
+            nav.header-menu
+                -var services = 'Услуги'
+                -var agreements = 'Соглашения'
+                -var menu = {'О наc': '#', 'Услуги': '#', 'Вакансии': '#', 'Новости': '#', 'Соглашения': '#'}
+                each val, key in menu 
+                    if services === key
+                        a.header-menu__link.icon(href=val)= key
+                            span.icon__expand-nav expand_more
+                    else if agreements === key
+                        a.header-menu__link.icon(href=val)= key
+                            span.icon__expand-nav expand_more
+                    else 
+                        a.header-menu__link(href=val)= key
+            div.header__button.button
+                a(href='#' data-da='header-menu, last, 992')
+                    button.button__login Войти
+                a(href='#' data-da='header-menu, last, 992')
+                    button.button__registration Зарегистрироваться
+            div.header-burger
+                span
 

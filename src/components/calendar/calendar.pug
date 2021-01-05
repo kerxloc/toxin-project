@@ -1,0 +1,16 @@
+mixin weekdays()
+    each val in ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+        span= val
+
+div.calendar-outter.calendar-inner
+    div.calendar-inner__header
+        i.icon__arrow-calendar.material-icons#arrow-prev arrow_back
+        span.calendar-inner__month
+        i.icon__arrow-calendar.material-icons#arrow-next arrow_forward
+    div.calendar-inner__main
+        div.calendar-inner__weekdays
+            +weekdays
+        div.calendar-inner__days
+    div.calendar-inner__footer.calendar-footer
+        button.calendar-footer__button_clear Очистить
+        button.calendar-footer__button_apply Применить

@@ -40,18 +40,18 @@ module.exports = {
           filename: `./${page.replace(/\.pug/,'.html')}`
         })),
         new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/header/header.pug`,
-          filename: 'header.html',
+          template: `${PATHS.src}/index.pug`,
+          filename: 'index.html',
           inject: true
         }),
         new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/bottom_block/bottom_block.pug`,
-          filename: 'bottom_block.html',
+          template: `${PATHS.src}/components/guest_dropdown/guest_dropdown.pug`,
+          filename: 'guest_dropdown.html',
           inject: true
         }),
         new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/footer/footer.pug`,
-          filename: 'footer.html',
+          template: `${PATHS.src}/components/calendar/calendar.pug`,
+          filename: 'calendar.html',
           inject: true
         }),
       ],
