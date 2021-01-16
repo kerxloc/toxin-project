@@ -1,0 +1,111 @@
+.main-img {
+    width: 100%;
+    height: 830px;
+}
+.form-outter {
+    height: 374px;
+    width: 380px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0, .12);
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 140px;
+    @media (max-width: $screen-md) {
+        width: 280px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    } 
+}
+.form-inner {
+    &__title {
+        font-family: $mainf-bold;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 30px;
+        color: #1f2041;
+        margin: 40px 30px 20px;
+        @media (max-width: $screen-md) {
+            font-size: 20px;
+            margin: 40px 18px 20px;
+        }
+    }
+    &__row {
+        display: flex;
+    }
+    &__label {
+        @include label-style;
+        margin: 1px 0 3px;
+        @media (max-width: $screen-md) {
+            font-size: 10px;
+        }
+    }
+    &__input {
+        @include input-style;
+        width: 135px;
+        &::placeholder {
+            @include placeholder-style;
+                 @media (max-width: $screen-md) {
+                    font-size: 11px;
+            }
+        }
+        @media (max-width: $screen-md) {
+            width: 95px;
+        }
+        &_large {
+            @include input-style;
+            width: 305px;
+            &::placeholder {
+                @include placeholder-style;
+                @media (max-width: $screen-md) {
+                    font-size: 11px;
+                }
+            }
+            @media (max-width: $screen-md) {
+                width: 225px;
+            }
+        }
+    }
+    &__group-1 {
+        margin: -1px 0 0 28px;
+        @media (max-width: $screen-md) {
+            margin: -1px 0 0 18px;
+        }
+    }
+    &__group-2 {
+        margin: -1px 0 0 28px;
+    }
+    &__group-3 {
+        margin: 17px 0 1px 28px;
+        @media (max-width: $screen-md) {
+            margin: 17px 0 1px  18px;
+        }
+    }
+}
+.search-button {
+    @include buttons-style;
+    height: 44px;
+    width: 320px;
+    background: $main-gradient;
+    color: #fff;
+    text-align: center;
+    margin: 28px 29px 30px;
+    border: none;
+    &:hover {
+        filter: brightness(105%);
+    }
+    @media (max-width: $screen-md) {
+        width: 240px;
+        margin: 28px 20px 30px;
+        font-size: 10px;
+    }
+}
+.promo {
+    @include promo-style;
+    @include adaptiv-font(14, 12);
+    width: 297px;
+    height: 48px;
+    text-align: right;
+    position: absolute;
+    top: 834px;
+    right: 5%; 
+}

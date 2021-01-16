@@ -4,10 +4,12 @@
 @import './assets/scss/fa-scss/fontawesome.scss';
 @import './assets/scss/fa-scss/brands.scss';
 @import './components/header/header.scss';
+@import './components/main_block/main_block.scss';
 @import './components/bottom_block/bottom_block.scss';
 @import './components/footer/footer.scss';
 @import './components/guest_dropdown/guest_dropdown.scss';
 @import './components/calendar/calendar.scss';
+@import './components/search_room/search_room.scss';
 
 body {
     height: 100%;
@@ -44,7 +46,7 @@ body {
     @include arrow-style;
     margin-left: -66px;
     color: #fff;
-    z-index: 5;
+    z-index: 10;
     @media (max-width: $screen-md) {
         font-size: 20px;
         margin-left: -55px;
@@ -62,164 +64,20 @@ body {
     @include arrow-style;
 }
 }
-.button {
-    &__login {
-        @include buttons-style;
-        height: 34px;
-        width: 87px;
-        background: none;
-        border-color: #bc9cff;
-        border-style: solid;
-        color: #bc9cff;
-        margin-left: 25px;
-        &:hover {
-            background: $main-gradient;
-            color: #fff;
-            @media (max-width: $screen-lg) {
-                background: none;
-                color: #bc9cff;
-            }
-        }
-        @media (max-width: $screen-lg) {
-                border: none;
-                color: #fff;
-        }
-    }
-    &__registration {
-        @include buttons-style;
-        height: 34px;
-        width: 196px;
-        border-style: none;
-        background: $main-gradient;
-        color: #fff;
-        margin-left: 20px;
-        &:hover {
-            background: #fff;
-            color: #bc9cff;
-            border-color: #bc9cff;
-            border-style: solid;
-            @media (max-width: $screen-lg) {
-                background: none;
-                border: none;
-            }
-        }
-        @media (max-width: $screen-lg) {
-            background: none;
-            color: #fff
-        }
-    }
-}
-.main-img {
-    width: 100%;
-    height: 830px;
-}
-.form-outter {
-    height: 374px;
-    width: 380px;
-    background: #fff;
-    border: 1px solid rgba(0,0,0, .12);
-    border-radius: 4px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
-    position: absolute;
-    top: 140px;
-    @media (max-width: $screen-md) {
-        width: 280px;
-        box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    } 
-}
 
-.form-inner {
-    &__title {
-        font-family: $mainf-bold; //without quicksand font
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 30px;
-        color: #1f2041;
-        margin: 40px 30px 20px;
-        @media (max-width: $screen-md) {
-            font-size: 20px;
-            margin: 40px 18px 20px;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @media (max-width: $screen-xl) {
+        max-width: 993px;
     }
-    &__row {
-        display: flex;
-    }
-    &__label {
-        @include label-style;
-        margin: 1px 0 3px;
-        @media (max-width: $screen-md) {
-            font-size: 10px;
-        }
-    }
-    &__input {
-        @include input-style;
-        width: 135px;
-        &::placeholder {
-            @include placeholder-style;
-                 @media (max-width: $screen-md) {
-                    font-size: 11px;
-            }
-        }
-        @media (max-width: $screen-md) {
-            width: 95px;
-        }
-        &_large {
-            @include input-style;
-            width: 305px;
-            &::placeholder {
-                @include placeholder-style;
-                @media (max-width: $screen-md) {
-                    font-size: 11px;
-                }
-            }
-            @media (max-width: $screen-md) {
-                width: 225px;
-            }
-        }
-    }
-    &__group-1 {
-        margin: -1px 0 0 28px;
-        @media (max-width: $screen-md) {
-            margin: -1px 0 0 18px;
-        }
-    }
-    &__group-2 {
-        margin: -1px 0 0 28px;
-    }
-    &__group-3 {
-        margin: 17px 0 1px 28px;
-        @media (max-width: $screen-md) {
-            margin: 17px 0 1px  18px;
-        }
-    }
-}
-.search-button {
-    @include buttons-style;
-    height: 44px;
-    width: 320px;
-    background: $main-gradient;
-    color: #fff;
-    text-align: center;
-    margin: 28px 29px 30px;
-    border: none;
-    &:hover {
-        filter: brightness(105%);
+    @media (max-width: $screen-lg) {
+        max-width: 768px;
     }
     @media (max-width: $screen-md) {
-        width: 240px;
-        margin: 28px 20px 30px;
-        font-size: 10px;
+        max-width: 577px;
     }
-}
-.promo {
-    @include promo-style;
-    @include adaptiv-font(14, 12);
-    width: 297px;
-    height: 48px;
-    text-align: right;
-    position: absolute;
-    top: 834px;
-    right: 5%; 
 }
 
 .ibg {

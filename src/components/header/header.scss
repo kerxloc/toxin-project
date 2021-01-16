@@ -10,20 +10,7 @@
         justify-content: space-between;
     }
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    @media (max-width: $screen-xl) {
-        max-width: 993px;
-    }
-    @media (max-width: $screen-lg) {
-        max-width: 768px;
-    }
-    @media (max-width: $screen-md) {
-        max-width: 577px;
-    }
-}
+
 @media (max-width: $screen-lg) {
     .header-burger {
         display: block;
@@ -68,10 +55,12 @@
             }
     }
 }
+
 .header-logo {
     display: flex;
     align-items: center;
 }
+
 .header-menu {
       display: flex;
       align-items: center; 
@@ -110,6 +99,54 @@
         overflow: auto;
         &.active {
             top: 0;
+        }
+    }
+}
+
+.button {
+    &__login {
+        @include buttons-style;
+        height: 34px;
+        width: 87px;
+        background: none;
+        border-color: #bc9cff;
+        border-style: solid;
+        color: #bc9cff;
+        margin-left: 25px;
+        &:hover {
+            background: $main-gradient;
+            color: #fff;
+            @media (max-width: $screen-lg) {
+                background: none;
+                color: #bc9cff;
+            }
+        }
+        @media (max-width: $screen-lg) {
+                border: none;
+                color: #fff;
+        }
+    }
+    &__registration {
+        @include buttons-style;
+        height: 34px;
+        width: 196px;
+        border-style: none;
+        background: $main-gradient;
+        color: #fff;
+        margin-left: 20px;
+        &:hover {
+            background: #fff;
+            color: #bc9cff;
+            border-color: #bc9cff;
+            border-style: solid;
+            @media (max-width: $screen-lg) {
+                background: none;
+                border: none;
+            }
+        }
+        @media (max-width: $screen-lg) {
+            background: none;
+            color: #fff
         }
     }
 }

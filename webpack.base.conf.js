@@ -11,7 +11,7 @@ const PATHS = {
   assets: 'assets/'
 }
 
-const PAGES_DIR = `${PATHS.src}/components`
+const PAGES_DIR = `${PATHS.src}/pages`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(filename => filename.endsWith('.pug'))
 
 module.exports = {
@@ -42,16 +42,6 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: `${PATHS.src}/index.pug`,
           filename: 'index.html',
-          inject: true
-        }),
-        new HtmlWebpackPlugin({
-          template: `${PATHS.src}/components/guest_dropdown/guest_dropdown.pug`,
-          filename: 'guest_dropdown.html',
-          inject: true
-        }),
-        new HtmlWebpackPlugin({
-          template: `${PATHS.src}/components/calendar/calendar.pug`,
-          filename: 'calendar.html',
           inject: true
         }),
       ],
