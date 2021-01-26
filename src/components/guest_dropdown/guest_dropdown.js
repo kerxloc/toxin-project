@@ -1,14 +1,14 @@
-let countPlus = document.querySelector(".guest-inner__column-4");
-let countMinus = document.querySelector(".guest-inner__column-2");
-let minusButtons = document.querySelectorAll(".guest-inner__circle-minus");
-let countText1 = document.querySelector("#text-1");
-let countText2 = document.querySelector("#text-2");
-let countText3 = document.querySelector("#text-3");
-let guestApplyButton = document.querySelector(".guest-inner__button_apply");
-let guestClearButton = document.querySelector(".guest-inner__button_clear");
-let guestInput = document.querySelector(".form-inner__input_large");
-let guestForm = document.querySelector(".guest-dropdown");
-let expandInputIcons = document.querySelectorAll(".icon__expand-input");
+const countPlus = document.querySelector(".guest-inner__column-4");
+const countMinus = document.querySelector(".guest-inner__column-2");
+const minusButtons = document.querySelectorAll(".guest-inner__circle-minus");
+const countText1 = document.querySelector("#text-1");
+const countText2 = document.querySelector("#text-2");
+const countText3 = document.querySelector("#text-3");
+const guestApplyButton = document.querySelector(".guest-inner__button_apply");
+const guestClearButton = document.querySelector(".guest-inner__button_clear");
+const guestInput = document.querySelector(".form-inner__input_large");
+const guestForm = document.querySelector(".guest-dropdown");
+const expandInputIcons = document.querySelectorAll(".icon__expand-input");
 
 countPlus.onclick = (e) => {
     let target = e.target.closest("div");

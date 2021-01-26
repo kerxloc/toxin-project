@@ -1,8 +1,67 @@
-doctype html
-html(lang='ru')
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0')
-        title Toxin
-    body
-        
+mixin checkbox-list(title)
+    label.item
+        input.item__input(type="checkbox" name="facilities-list")
+        span.item__checkbox
+        span.item__title= title
+
+section.search-page.container
+    aside.search-page__side
+        div.dates-guests
+            div.dates-guests__group-1
+                label.dates-guests__date-label Даты пребывания в отеле
+                input.dates-guests__date-input(type="text" readonly autocomplete="off" placeholder="19 авг - 23 авг")
+                i.icon__expand-input expand_more
+            div.dates-guests__group-2
+                label.dates-guests__guest-label Гости
+                input.dates-guests__guest-input(type="text" readonly autocomplete="off" placeholder="3 гостя, 1 младенец")
+                i.icon__expand-input expand_more
+        div.price-range
+            div.price-header
+                span.price-header__title Диапозон цены
+                span.price-header__prices
+            div.price-filter
+            div.price-footer
+                span.price-footer__text Стоимость за сутки пребывания в номере
+        div.search-page__checkboxes
+            div.checkbox-rules
+                span.checkbox-rules__title Правила дома
+                label.checkbox-rules__smoking.smoking
+                    input.smoking__input(type="checkbox" name="smoking")
+                    span.smoking__checkbox
+                    span.smoking__text Можно курить
+                label.checkbox-rules__pets.pets
+                    input.pets__input(type="checkbox" name="pets")
+                    span.pets__checkbox
+                    span.pets__text Можно c питомцами
+                label.checkbox-rules__limit.guest-limit
+                    input.guest-limit__input(type="checkbox" name="guest-limit")
+                    span.guest-limit__checkbox
+                    span.guest-limit__text Можно пригласить гостей<br>(до 10 человек)
+            div.checkbox-availability
+                span.checkbox-availability__title Доступность
+                label.wide-corridor
+                    input.wide-corridor__input(type="checkbox" name="wide-corridor")
+                    span.wide-corridor__checkbox
+                    span.wide-corridor__title Широкий коридор
+                span.wide-corridor__subtitle Ширина коридоров в номере<br>не менее 91 см.
+                label.assistant
+                    input.assistant__input(type="checkbox" name="wide-corridor")
+                    span.assistant__checkbox
+                    span.assistant__title Помощник для инвалидов
+                span.assistant__subtitle На 1 этаже вас встретит специалист<br>и проводит до номера.
+        div.facilities
+            label.facilities__title Удобства номера
+            input.facilities__input(type="text" readonly autocomplete="off" placeholder="2 спальни, 2 кровати")
+            i.icon__expand-input expand_more
+        div.facilities-extra
+            div.extra-text
+                span.extra-text__title Дополнительные удобства
+                i.icon__expand-nav expand_more
+            div.facilitites-list
+                +checkbox-list("Завтрак")
+                +checkbox-list("Письменный стол")
+                +checkbox-list("Стул для кормления")
+                +checkbox-list("Кроватка")
+                +checkbox-list("Телевизор")
+                +checkbox-list("Шампунь")
+    div.search-page__main sample text

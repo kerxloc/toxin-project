@@ -1,0 +1,334 @@
+.search-page {
+    display: flex;
+    &__side {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.dates-guests {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    &__date-label {
+        @include label-style;
+        margin-bottom: 5px;
+    }
+    &__guest-label {
+        @include label-style;
+        margin-bottom: 5px;
+    }
+    &__date-input {
+        @include input-style;
+        width: 251px;
+    }
+    &__guest-input {
+        @include input-style;
+        width: 251px;
+    }
+    &__group-1 {
+        margin-bottom: 30px;
+    }
+}
+
+.price-range {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    .price-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 23px;
+        &__title {
+            @include label-style;
+            margin-right: 50px;
+        }
+        &__prices {
+            font-family: $main-font;
+            font-size: 12px;
+            line-height: 15px;
+            text-transform: uppercase;
+            color: rgba(31, 32, 65, 0.5);
+        }
+    }
+    .price-filter {
+        height: 6px;
+        width: 266px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 3px;
+        cursor: pointer;
+        .noUi-base,
+        .noUi-connects {
+            position: relative;
+            height: 6px;
+        }
+        .noUi-origin,
+        .noUi-connect {
+            will-change: transform;
+            width: 10%;
+            height: 10%;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            transform-origin: 0 0;
+            transform-style: flat;
+            cursor: pointer;
+        }
+        .noUi-connect {
+            background-color: #bc9cff;
+            width: 100%;
+            height: 100%;
+        }
+        .noUi-handle {
+            width: 12px;
+            height: 12px;
+            border: 2px solid #fff;
+            background-color: #bc9cff;
+            border-radius: 10px;
+            position: relative;
+            top: -6px;
+            right: -20px;
+            cursor: pointer;
+        }
+    }
+    .price-footer {
+        font-family: $main-font;
+        font-size: 12px;
+        line-height: 14px;
+        color: rgba(31, 32, 65, 0.5);
+        margin-top: 14px;
+    }
+}
+
+.checkbox-rules {
+    margin-top: 30px;
+    &__title {
+        @include label-style;
+        margin-bottom: 16px;
+    }
+    .smoking {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        &__input {
+            display: none;
+            &:checked {
+                &~.smoking__checkbox {
+                    &::after {
+                        transform: rotate(45deg);
+                        background: $main-gradient;
+                    }
+                    &::before {
+                        transform: rotate(135deg);
+                        background: $main-gradient;
+                    }
+                }
+            }
+        }
+        &__text {
+            font-family: $main-font;
+            font-size: 14px;
+            line-height: 18px;
+            color: rgba(31, 32, 65, 0.5);
+        }
+        &__checkbox {
+            @include checkbox-style(#bc9cff);
+            margin-right: 10px;
+        }
+    }
+    .pets {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        &__input {
+            display: none;
+            &:checked {
+                &~.pets__checkbox {
+                    &::after {
+                            transform: rotate(45deg);
+                            background: $main-gradient;
+                    }
+                    &::before {
+                            transform: rotate(135deg);
+                            background: $main-gradient;
+                    }
+                }
+            }
+            }
+            &__text {
+                font-family: $main-font;
+                font-size: 14px;
+                line-height: 18px;
+                color: rgba(31, 32, 65, 0.5);
+            }
+            &__checkbox {
+                @include checkbox-style(#bc9cff);
+                margin-right: 10px;
+            }
+    }
+    .guest-limit {
+        display: flex;
+        &__input {
+            display: none;
+            &:checked {
+                &~.guest-limit__checkbox {
+                    &::after {
+                            transform: rotate(45deg);
+                            background: $main-gradient;
+                    }
+                    &::before {
+                            transform: rotate(135deg);
+                            background: $main-gradient;
+                    }
+                }
+            }
+            }
+            &__text {
+                font-family: $main-font;
+                font-size: 14px;
+                line-height: 18px;
+                color: rgba(31, 32, 65, 0.5);
+            }
+            &__checkbox {
+                @include checkbox-style(#bc9cff);
+                margin-right: 10px;
+            }
+    }
+}
+.checkbox-availability {
+    margin-top: 30px;
+    &__title {
+        @include label-style;
+        margin-bottom: 16px;
+    }
+    .wide-corridor {
+        display: flex;
+        align-items: center;
+        &__input {
+            display: none;
+            &:checked {
+                &~.wide-corridor__checkbox {
+                    &::after {
+                         transform: rotate(45deg);
+                         background: $main-gradient;
+                    }
+                    &::before {
+                         transform: rotate(135deg);
+                         background: $main-gradient;
+                    }
+                }
+            }
+        }
+        &__checkbox {
+            @include checkbox-style(rgba(31, 32, 65, 0.25));
+            margin-right: 10px;
+        }
+        &__title {
+            font-family: $mainf-bold;
+            font-size: 14px;
+            line-height: 18px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+        &__subtitle {
+            display: block;
+            font-family: $main-font;
+            font-size: 12px;
+            line-height: 14px;
+            color: rgba(31, 32, 65, 0.5);
+            margin: 5px 0 0 33px        
+        }
+    }
+    .assistant {
+        display: flex;
+        align-items: center;
+        margin-top: 11px;
+        &__input {
+            display: none;
+            &:checked {
+                &~.assistant__checkbox {
+                    &::after {
+                         transform: rotate(45deg);
+                         background: $main-gradient;
+                    }
+                    &::before {
+                         transform: rotate(135deg);
+                         background: $main-gradient;
+                    }
+                }
+            }
+        }
+        &__checkbox {
+            @include checkbox-style(rgba(31, 32, 65, 0.25));
+            margin-right: 10px;
+        }
+        &__title {
+            font-family: $mainf-bold;
+            font-size: 14px;
+            line-height: 18px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+        &__subtitle {
+            display: block;
+            font-family: $main-font;
+            font-size: 12px;
+            line-height: 14px;
+            color: rgba(31, 32, 65, 0.5);
+            margin: 5px 0 0 33px       
+        }
+    }
+}
+
+.facilities {
+    margin-top: 30px;
+    &__title {
+        @include label-style;
+        margin-bottom: 5px;
+    }
+    &__input {
+        @include input-style;
+        width: 251px;
+    }
+}
+.facilities-extra {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    .extra-text {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        &__title {
+            @include label-style;
+            margin-right: 23px;
+        }
+    }
+    .item {
+        display: flex;
+        &__input {
+            display: none;
+            &:checked {
+                &~.item__checkbox {
+                    &::after {
+                            transform: rotate(45deg);
+                            background: $main-gradient;
+                    }
+                    &::before {
+                            transform: rotate(135deg);
+                            background: $main-gradient;
+                    }
+                }
+            }
+        }
+        &__checkbox {
+            @include checkbox-style(rgba(31, 32, 65, 0.25));
+            margin: 0 10px 10px 0;
+        }
+        &__title {
+            font-family: $main-font;
+            font-size: 14px;
+            line-height: 18px;
+            color: rgba(31, 32, 65, 0.5);
+        }
+    }
+}
