@@ -17,7 +17,7 @@
         position: relative;
         width: 30px;
         height: 22px;
-        z-index: 5;
+        z-index: 10;
             &::before, &::after {
                 content: '';
                 background-color: #bc9cff;
@@ -97,6 +97,7 @@
         transition: all 0.3s ease 0s;
         background-color: rgba(28, 36, 42, 0.8);
         overflow: auto;
+        z-index: 10;
         &.active {
             top: 0;
         }

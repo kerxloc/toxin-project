@@ -20,7 +20,8 @@ module.exports = {
     paths: PATHS
   },
     entry: {
-        app: PATHS.src
+        app: PATHS.src,
+        roomList: `${PATHS.src}/room-list.js`
     },
     output: {
         filename: `${PATHS.assets}js/[name].js`,

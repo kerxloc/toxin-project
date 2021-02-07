@@ -1,8 +1,7 @@
 import './assets/js/dynamic_adaptive';
 import './components/header/header';
-//import './components/guest_dropdown/guest_dropdown';
-//import './components/calendar/calendar';
-import './components/search_room/search_room';
+import './components/guest_dropdown/guest_dropdown';
+import './components/calendar/calendar';
 
 function ibg () {
     let ibg = document.querySelectorAll(".ibg");

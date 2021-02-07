@@ -27,6 +27,7 @@ countPlus.onclick = (e) => {
             minusButtons[2].children[0].style.color = 'rgba(31, 32, 65, 0.5)';
         }
 }
+
 countMinus.onclick = (e) => {
     let target = e.target.closest("div");
     if (target.getAttribute("id") == "Mbutton-1") {

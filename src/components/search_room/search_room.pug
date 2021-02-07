@@ -4,6 +4,44 @@ mixin checkbox-list(title)
         span.item__checkbox
         span.item__title= title
 
+mixin rooms-list(img, number, luxury, star_1, star_2, star_3, star_4, star_5, price, reviews)
+    -var path= "../assets/img/rooms/"
+    div.rooms__item
+        div.image
+            i.image__expand_1 expand_more
+            i.image__expand_2 expand_more
+            div.slider-track
+                div.slider-item
+                    a(href='#')
+                        img.image__img(src=`${path}${img}.jpg`)
+                    a(href='#')
+                        img.image__img(src=`${path}${img}.jpg`)
+                    a(href='#')
+                        img.image__img(src=`${path}${img}.jpg`)
+                    a(href='#')
+                        img.image__img(src=`${path}${img}.jpg`)
+            div.image__circles
+                div.circle__active
+                div.circle
+                div.circle
+                div.circle
+        div.rooms__main.room
+            div.room__number № 
+                span.room__number_big= number
+            span.room__luxury= luxury
+            div.room__price= price
+                span.room__price_light  в сутки
+        div.line
+        div.rooms__bottom.rating
+            div.rating__stars
+                i.rating__star.material-icons= star_1
+                i.rating__star.material-icons= star_2
+                i.rating__star.material-icons= star_3
+                i.rating__star.material-icons= star_4
+                i.rating__star.material-icons= star_5
+            div.rating__reviews= reviews 
+                span.rating__reviews_light  Отзывов
+
 section.search-page.container
     aside.search-page__side
         div.dates-guests
@@ -53,15 +91,45 @@ section.search-page.container
             label.facilities__title Удобства номера
             input.facilities__input(type="text" readonly autocomplete="off" placeholder="2 спальни, 2 кровати")
             i.icon__expand-input expand_more
+            include ../guest_dropdown/guest_dropdown.pug
         div.facilities-extra
             div.extra-text
                 span.extra-text__title Дополнительные удобства
-                i.icon__expand-nav expand_more
-            div.facilitites-list
+                i.icon__expand-facilities expand_more
+            div.facilities-items
                 +checkbox-list("Завтрак")
                 +checkbox-list("Письменный стол")
                 +checkbox-list("Стул для кормления")
                 +checkbox-list("Кроватка")
                 +checkbox-list("Телевизор")
                 +checkbox-list("Шампунь")
-    div.search-page__main sample text
+    div.search-page__main.hotel-number
+        h1.hotel-number__title Номера, которые мы для вас подобрали
+        div.hotel-number__rooms.rooms
+            div.rooms__row
+                +rooms-list("room-1", "888", "Люкс", "star", "star", "star", "star", "star", "9 990₽", "145")
+                +rooms-list("room-2", "840", "", "star", "star", "star", "star", "star_border", "9 900₽", "65")
+                +rooms-list("room-3", "980", "Люкс", "star", "star", "star", "star_border", "star_border", "8 500₽", "35")
+            div.rooms__row
+                +rooms-list("room-1", "856", "", "star", "star", "star", "star", "star", "7 300₽", "19")
+                +rooms-list("room-1", "740", "", "star", "star", "star", "star", "star_border", "6 000₽", "44")
+                +rooms-list("room-1", "982", "", "star", "star", "star", "star_border", "star_border", "5 800₽", "56")
+            div.rooms__row
+                +rooms-list("room-1", "678", "", "star", "star", "star", "star", "star", "5 500₽", "45")
+                +rooms-list("room-1", "450", "", "star", "star", "star", "star", "star_border", "5 300₽", "39")
+                +rooms-list("room-1", "350", "", "star", "star", "star", "star_border", "star_border", "5 000₽", "77")
+            div.rooms__row
+                +rooms-list("room-1", "666", "", "star", "star", "star", "star", "star", "5 000₽", "25")
+                +rooms-list("room-1", "444", "", "star", "star", "star", "star_border", "star_border", "5 000₽", "15")
+                +rooms-list("room-1", "352", "", "star", "star", "star", "star_border", "star_border", "5 000₽", "55")
+        div.pagging
+            div.pagging__list
+                a.pagging__item(href="") 1
+                a.pagging__item(href="") 2
+                a.pagging__item(href="") 3
+                span.pagging__item ...
+                a.pagging__item(href="") 15
+            a.pagging__arrow(href="")
+                i.icon__arrow-page arrow_forward 
+        div.rent-variation
+            span.rent-variation__text 1 – 12 из 100+ вариантов аренды

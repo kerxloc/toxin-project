@@ -23,46 +23,59 @@ body {
 .icon {
     display: flex;
     align-items: center;
-&__expand-nav {
-    @include expand-style(20px, none);
-    @media (max-width: $screen-lg) {
-        display: none;
+    &__expand-nav {
+        @include expand-style(20px, none);
+        @media (max-width: $screen-lg) {
+            display: none;
+        }
     }
-}
-&__expand-input {
-    @include expand-style(24px, center);
-    margin-left: -38px;
-    @media (max-width: $screen-md) {
-        font-size: 20px;
-        margin-left: -31px;
-    }
-    transition: all 0.3s ease 0s;
-    &_active {
-        transform: rotate(-180deg);
+    &__expand-facilities {
+        @include expand-style(20px, none);
         transition: all 0.3s ease 0s;
+        &_active {
+            transform: rotate(-180deg);
+            transition: all 0.3s ease 0s;
+        }
     }
-}
-&__arrow-button {
-    @include arrow-style;
-    margin-left: -66px;
-    color: #fff;
-    z-index: 10;
-    @media (max-width: $screen-md) {
-        font-size: 20px;
-        margin-left: -55px;
+    &__expand-input {
+        @include expand-style(24px, center);
+        margin-left: -38px;
+        @media (max-width: $screen-md) {
+            font-size: 20px;
+            margin-left: -31px;
+        }
+        transition: all 0.3s ease 0s;
+        &_active {
+            transform: rotate(-180deg);
+            transition: all 0.3s ease 0s;
+        }
     }
-}
-&__arrow-input {
-    @include arrow-style;
-    margin: 22px 0 0 -38px;
-    @media (max-width: $screen-md) {
-        font-size: 20px;
-        margin: 15px 0 0 -30px;
+    &__arrow-button {
+        @include arrow-style;
+        margin-left: -66px;
+        color: #fff;
+        z-index: 10;
+        @media (max-width: $screen-md) {
+            font-size: 20px;
+            margin-left: -55px;
+        }
     }
-}
-&__arrow-calendar {
-    @include arrow-style;
-}
+    &__arrow-input {
+        @include arrow-style;
+        margin: 22px 0 0 -38px;
+        @media (max-width: $screen-md) {
+            font-size: 20px;
+            margin: 15px 0 0 -30px;
+        }
+    }
+    &__arrow-calendar {
+        @include arrow-style;
+    }
+    &__arrow-page {
+        @include arrow-style;
+        color: #fff;
+        padding-right: 5px;
+    }
 }
 
 .container {
