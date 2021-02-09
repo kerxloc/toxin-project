@@ -1,5 +1,5 @@
 ---
-permalink: /src/pages/landing_page.pug
+permalink: /dist/landing_page.html
 ---
 
 # toxin-project
