@@ -1,0 +1,181 @@
+.reg-main {
+    height: 686px;
+    position: relative;
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.reg-account {
+    width: 320px;
+    height: 606px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    left: calc(50% - 380px/2 + 3px);
+    top: calc(50% - 646px/2 + 3px);
+    padding: 40px 30px 0;
+}
+
+.reg-inner {
+    &__title {
+        font-family: $mainf-bold;
+        font-size: 24px;
+        line-height: 29px;
+        color: #1f2041;
+    }
+    .reg-top {
+        margin-top: 20px;
+        &__name {
+            @include input-style;
+            width: 305px;
+            margin-bottom: 10px;
+        }
+        &__surname {
+            @include input-style;
+            width: 305px;
+        }
+        &__gender {
+            margin-top: 10px;
+        }
+        .male {
+            &__input {
+                display: none;
+            }
+            &__text {
+               @include radio-style;
+            }
+            .male__input:checked + .male__text::after {
+                opacity: 1;
+            }
+        }
+        .female {
+            margin-left: 20px;
+            &__input {
+                display: none;
+            }
+            &__text {
+                @include radio-style;
+            }
+            .female__input:checked + .female__text::after {
+                opacity: 1;
+            } 
+        }
+    }
+    .reg-middle {
+        margin-top: 20px;
+        &__birthday-text {
+            @include label-style;
+            display: flex;
+            flex-direction: column;
+        }
+        &__birthday-input {
+            @include input-style;
+            width: 305px;
+            margin-top: 5px;
+        }
+    }
+    .reg-bottom {
+        margin-top: 20px;
+        &__authentication {
+            @include label-style;
+        }
+        &__email {
+            @include input-style;
+            width: 305px;
+            margin-top: 5px;
+        }
+        &__password {
+            @include input-style;
+            width: 305px;
+            margin-top: 10px;
+        }
+        .special-offer {
+            margin-top: 10px;
+            display: flex;
+            &__toggle {
+                width: 40px;
+                height: 20px;
+                border: 1px solid rgba(31, 32, 65, .25);
+                background: #fff;
+                border-radius: 10px;
+                position: relative;
+                display: inline-flex;
+            }
+            &__circle {
+                width: 12px;
+                height: 12px;
+                background-color: rgba(31, 32, 65, .25);
+                border-radius: 10px;
+                position: absolute;
+                top: 4px;
+                left: 3px;
+                transition: left .5s;
+            }
+            &__text {
+                padding-left: 50px; 
+                font-family: $main-font;
+                font-size: 14px;
+                line-height: 171%;
+                color: rgba(31, 32, 65, .75);
+                display: inline;
+            }
+            #check:checked ~ .special-offer__toggle .special-offer__circle {
+                left: calc(100% - 15px);
+            }
+            #check:checked ~ .special-offer__circle {
+                background-color: red;
+            }
+            #check:checked ~ .special-offer__toggle {
+                border-color: #bc9cff;
+            }
+        }
+    }
+    .reg-buttons {
+        margin-top: 20px;
+        &__registration {
+            @include buttons-style;
+            width: 320px;
+            height: 44px;
+            border-radius: 22px;
+            background: $main-gradient;
+            color: #fff;
+            border: none;
+            &:hover {
+                filter: brightness(105%);
+            }
+        }
+        .login {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+            &__text {
+                font-family: $main-font;
+                font-size: 14px;
+                line-height: 18px;
+                color: #000;
+            }
+            &__button {
+                width: 99px;
+                height: 44px;
+                border-radius: 22px;
+                border: 2px solid #bc9cff;
+                background-color: #fff;
+                font-family: $mainf-bold;
+                font-size: 12px;
+                line-height: 15px;
+                text-transform: uppercase;
+                color: #bc9cff;
+                cursor: pointer;
+                &:hover {
+                    background: $main-gradient;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

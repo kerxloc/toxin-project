@@ -1,0 +1,35 @@
+section.reg-main
+    img.reg-main__img.ibg(src="../assets/img/bg-reg.png")
+    form.reg-account.reg-inner(action="#")
+        span.reg-inner__title Регистрация аккаунта
+        div.reg-top
+            input.reg-top__name(type="text" placeholder="Имя")
+            input.reg-top__surname(type="text" placeholder="Фамилия")
+            div.reg-top__gender
+                label.male
+                    input.male__input(type="radio" name="gender" value="male")
+                    span.male__text Мужчина
+                label.female
+                    input.female__input(type="radio" name="gender" value="female")
+                    span.female__text Женщина
+        div.reg-middle
+            label.reg-middle__birthday-text Дата рождения
+                input.reg-middle__birthday-input(type="text" placeholder="ДД.ММ.ГГГГ")
+        div.reg-bottom
+            label.reg-bottom__authentication Данные для входа в сервис
+                input.reg-bottom__email(type="text" placeholder="Email")
+                input.reg-bottom__password(type="password" placeholder="Пароль")
+            div.special-offer
+                input.special-offer__checkbox(type="checkbox" id="check" name="offer" value="special-offer" hidden)
+                label.special-offer__toggle(for="check")
+                    div.special-offer__circle
+                    span.special-offer__text Получатьспецпредложения
+        div.reg-buttons
+            input.reg-buttons__registration(type="submit" value="Зарегистрироваться")
+            div.login
+                span.login__text Уже есть аккаунт на Toxin
+                a(href="#")
+                    button.login__button Войти
+
+
+

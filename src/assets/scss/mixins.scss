@@ -1,9 +1,8 @@
 
 @mixin buttons-style {
     border-radius: 22px;
-    font-family: $main-font;
+    font-family: $mainf-bold;
     text-transform: uppercase;
-    font-weight: bold;
     font-size: 12px;
     line-height: 15px;
     outline: none;
@@ -70,6 +69,41 @@
         width: 3px;
         height: 9px;
         transition: all linear .3s;
+    }
+}
+
+@mixin radio-style {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    font-family: $main-font;
+    font-size: 14px;
+    line-height: 171%;
+    color: rgba(31, 32, 65, 0.75);
+    &::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &::after {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: $main-gradient;
+        border-radius: 10px;
+        opacity: 0;
+        transition: .2s;
+        transform: (-50%, -50%);
+        position: absolute;
+        top: 5px;
+        left: 5px;
     }
 }
 
