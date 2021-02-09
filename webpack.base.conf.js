@@ -40,11 +40,6 @@ module.exports = {
           template: `${PAGES_DIR}/${page}`,
           filename: `./${page.replace(/\.pug/,'.html')}`
         })),
-        new HtmlWebpackPlugin({
-          template: `${PATHS.src}/index.pug`,
-          filename: 'index.html',
-          inject: true
-        }),
       ],
       module: {
         rules: [
