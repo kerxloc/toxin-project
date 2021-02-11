@@ -1,44 +1,32 @@
-doctype html
-html(lang='ru')
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0')
-        title Toxin
-    body
-
-        include ../components/header/header.pug
-
-        mixin search-form(text, input_type, id) 
-            -var input_type
-            label.form-inner__label= text
-            div.icon
-            if input_type == "large"
-                input.form-inner__input_large(type="text" readonly autocomplete="off" placeholder="Сколько гостей")
-                i.icon__expand-input expand_more
-            else if input_type == "standart"
-                input.form-inner__input(type="text" autocomplete="off" placeholder="ДД.ММ.ГГГГ" id=id)
-                i.icon__expand-input expand_more
-
-        section.main
-            img.main-img.ibg(src='./assets/img/bg-image.png')
-            div.container
-                form.form-outter.form-inner(action='#')
-                    h1.form-inner__title Найдём номера под ваши пожелания
-                    div.form-inner__row
-                        div.form-inner__group-1
-                            +search-form("Прибытие", "standart", "arrival-input")
-                            include ../components/calendar/calendar.pug
-                        div.form-inner__group-2
-                            +search-form("Выезд", "standart", "departure-input")
-                            include ../components/calendar/calendar.pug
-                    div.form-inner__group-3
-                        +search-form("Гости", "large", "")
-                        include ../components/guest_dropdown/guest_dropdown.pug
-                    div.icon 
+extends ../index.pug
+mixin search-form(text, input_type, id) 
+    -var input_type
+    label.form-inner__label= text
+    if input_type == "large"
+        div.icon
+            input.form-inner__input_large(type="text" readonly autocomplete="off" placeholder="Сколько гостей")
+            i.icon__expand-input expand_more
+    else if input_type == "standart"
+        div.icon
+            input.form-inner__input(type="text" autocomplete="off" placeholder="ДД.ММ.ГГГГ" id=id)
+            i.icon__expand-input expand_more
+block main-content
+    section.main
+        img.main-img.ibg(src='./assets/img/bg-image.png')
+        div.container
+            form.form-outter.form-inner(action='#')
+                h1.form-inner__title Найдём номера под ваши пожелания
+                div.form-inner__row
+                    div.form-inner__group-1
+                        +search-form("Прибытие", "standart", "arrival-input")
+                        include ../components/calendar/calendar.pug
+                    div.form-inner__group-2
+                        +search-form("Выезд", "standart", "departure-input")
+                        include ../components/calendar/calendar.pug
+                div.form-inner__group-3
+                    +search-form("Гости", "large", "")
+                    include ../components/guest_dropdown/guest_dropdown.pug
+                div.icon 
                     input.search-button(type="submit" value="Подобрать номер")
                     i.icon__arrow-button arrow_forward
-                span.promo Лучшие номера для вашей работы, отдыха и просто вдохновения
-
-        include ../components/bottom_block/bottom_block.pug
-
-        include ../components/footer/footer.pug
+            span.promo Лучшие номера для вашей работы, отдыха и просто вдохновения

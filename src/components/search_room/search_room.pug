@@ -44,15 +44,17 @@ mixin rooms-list(img, number, luxury, star_1, star_2, star_3, star_4, star_5, pr
 
 section.search-page.container
     aside.search-page__side
-        div.dates-guests
-            div.dates-guests__group-1
-                label.dates-guests__date-label Даты пребывания в отеле
-                input.dates-guests__date-input(type="text" readonly autocomplete="off" placeholder="19 авг - 23 авг")
-                i.icon__expand-input expand_more
-            div.dates-guests__group-2
-                label.dates-guests__guest-label Гости
-                input.dates-guests__guest-input(type="text" readonly autocomplete="off" placeholder="3 гостя, 1 младенец")
-                i.icon__expand-input expand_more
+        div.residence-guests
+            div.residence-guests__group-1
+                label.residence-guests__dates-title(for="residence") Даты пребывания в отеле
+                div.icon
+                    input.residence-guests__dates-input(type="text" id="residence" readonly autocomplete="off" placeholder="19 авг - 23 авг")
+                    i.icon__expand-input expand_more
+            div.residence-guests__group-2
+                label.residence-guests__guest-title(for="guests") Гости
+                div.icon
+                    input.residence-guests__guest-input(type="text" id="guests" readonly autocomplete="off" placeholder="3 гостя, 1 младенец")
+                    i.icon__expand-input expand_more
         div.price-range
             div.price-header
                 span.price-header__title Диапозон цены
@@ -88,10 +90,10 @@ section.search-page.container
                     span.assistant__title Помощник для инвалидов
                 span.assistant__subtitle На 1 этаже вас встретит специалист<br>и проводит до номера.
         div.facilities
-            label.facilities__title Удобства номера
-            input.facilities__input(type="text" readonly autocomplete="off" placeholder="2 спальни, 2 кровати")
-            i.icon__expand-input expand_more
-            include ../guest_dropdown/guest_dropdown.pug
+            label.facilities__title(for="facilities") Удобства номера
+            div.icon
+                input.facilities__input(type="text" id="facilities" readonly autocomplete="off" placeholder="2 спальни, 2 кровати")
+                i.icon__expand-input expand_more
         div.facilities-extra
             div.extra-text
                 span.extra-text__title Дополнительные удобства
