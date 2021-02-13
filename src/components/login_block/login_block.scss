@@ -11,9 +11,17 @@
         position: absolute;
         top: calc(50% - 358px/2 - 2px);
         left: calc(50% - 380px/2 + 3px);;
+        @media (max-width: $screen-md) {
+            width: calc(280px - 30px);
+            height: calc(293px - 20px);
+            left: auto;
+            top: calc(50% - 293px/2 - 2px)
+        }
     }
+        @media (max-width: $screen-md) {
+            height: 600px;
+   }
 }
-
 .signin-img {
     width: 100%;
     height: 100%;
@@ -26,19 +34,35 @@
         font-size: 24px;
         line-height: 29px;
         color: #1f2041;
+        @media (max-width: $screen-md) {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: $screen-md) {
+        padding: 20px 15px 0;   
     }
 }
 
 .signin-authentication {
     margin-top: 20px;
+    @media (max-width: $screen-md) {
+        margin-top: 10px;
+    }
     &__email {
         @include input-style;
         width: 305px;
+        @media (max-width: $screen-md) {
+            width: 230px;
+        }
     }
     &__password {
         @include input-style;
         width: 305px;
         margin: 10px 0 20px;
+        @media (max-width: $screen-md) {
+            width: 230px;
+            margin: 10px 0 15px;
+        }
     }
     &__button {
         @include buttons-style;
@@ -51,6 +75,11 @@
         &:hover {
             filter: brightness(105%);
         }
+        @media (max-width: $screen-md) {
+            width: 250px;
+            font-size: 10px;
+            height: 35px;
+        }
     }
 }
 
@@ -59,11 +88,17 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+    @media (max-width: $screen-md) {
+        margin-top: 20px;
+    }
     &__text {
         font-family: $main-font;
         font-size: 14px;
         line-height: 18px;
         color: #000;
+        @media (max-width: $screen-md) {
+            font-size: 12px;
+        }
     }
     &__button {
         width: 99px;
@@ -82,6 +117,12 @@
         &:hover {
             background: $main-gradient;
             color: #fff;
+        }
+        @media (max-width: $screen-md) {
+            width: 70px;
+            height: calc(35px - 10px);
+            padding-top: 10px;
+            font-size: 10px;
         }
     }
 }

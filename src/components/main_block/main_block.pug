@@ -1,0 +1,31 @@
+mixin search-form(text, input_type, id, name) 
+    -var input_type
+    label.form-inner__label= text
+    if input_type == "large"
+        div.icon
+            input.form-inner__input_large(type="text" name= name required readonly autocomplete="off" placeholder="Сколько гостей")
+            i.icon__expand-input expand_more
+    else if input_type == "standart"
+        div.icon
+            input.form-inner__input(type="text" name= name required autocomplete="off" placeholder="ДД.ММ.ГГГГ" id= id)
+            i.icon__expand-input expand_more
+
+section.main
+    img.main-img.ibg(src='./assets/img/bg-image.png')
+    div.container
+        form.form-outter.form-inner(action='#')
+            h1.form-inner__title Найдём номера под ваши пожелания
+            div.form-inner__row
+                div.form-inner__group-1
+                    +search-form("Прибытие", "standart", "arrival-input", "arrival-date")
+                    include ../calendar/calendar.pug
+                div.form-inner__group-2
+                    +search-form("Выезд", "standart", "departure-input", "departure-date")
+                    include ../calendar/calendar.pug
+            div.form-inner__group-3
+                +search-form("Гости", "large", "", "number_of_guests")
+                include ../guest_dropdown/guest_dropdown.pug
+            div.icon 
+                input.search-button(type="submit" value="Подобрать номер")
+                i.icon__arrow-button arrow_forward
+        span.promo Лучшие номера для вашей работы, отдыха и просто вдохновения

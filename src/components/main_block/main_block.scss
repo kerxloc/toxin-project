@@ -1,20 +1,29 @@
+.main {
+    height: 830px;
+    position: relative;
+}
+
 .main-img {
     width: 100%;
-    height: 830px;
+    height: 100%;
 }
+
 .form-outter {
-    height: 374px;
-    width: 380px;
+    height: calc(374px - 40px);
+    width: calc(380px - 60px);
     background: #fff;
     border: 1px solid rgba(0,0,0, .12);
     border-radius: 4px;
     box-shadow: 0 0 25px rgba(0, 0, 0, .2);
     position: absolute;
-    top: 140px;
+    top: 70px;
+    padding: 40px 30px 20px;
     @media (max-width: $screen-md) {
-        width: 280px;
+        width: calc(280px - 30px);
+        height: calc(300px - 20px);
         box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    } 
+        padding: 20px 15px 10px;
+    }
 }
 .form-inner {
     &__title {
@@ -23,10 +32,10 @@
         font-size: 24px;
         line-height: 30px;
         color: #1f2041;
-        margin: 40px 30px 20px;
+        margin-bottom: 20px;
         @media (max-width: $screen-md) {
             font-size: 20px;
-            margin: 40px 18px 20px;
+            margin-bottom: 10px;
         }
     }
     &__row {
@@ -34,7 +43,7 @@
     }
     &__label {
         @include label-style;
-        margin: 1px 0 3px;
+        margin-bottom: 5px;
         @media (max-width: $screen-md) {
             font-size: 10px;
         }
@@ -42,37 +51,31 @@
     &__input {
         @include input-style;
         width: 135px;
+        color: rgba(31, 32, 65, 0.75);
         &::placeholder {
             color: rgba(31, 32, 65, 0.75);
         }
         @media (max-width: $screen-md) {
             width: 95px;
+            font-size: 11px;
         }
         &_large {
             @include input-style;
             width: 305px;
+            color: rgba(31, 32, 65, 0.75); 
             &::placeholder {
-                color: rgba(31, 32, 65, 0.75);
+                color: rgba(31, 32, 65, 0.75);  
             }
             @media (max-width: $screen-md) {
                 width: 225px;
             }
         }
     }
-    &__group-1 {
-        margin: -1px 0 0 28px;
-        @media (max-width: $screen-md) {
-            margin: -1px 0 0 18px;
-        }
-    }
     &__group-2 {
-        margin: -1px 0 0 28px;
+        margin-left: 28px;
     }
     &__group-3 {
-        margin: 17px 0 1px 28px;
-        @media (max-width: $screen-md) {
-            margin: 17px 0 1px  18px;
-        }
+        margin-top: 17px;
     }
 }
 .search-button {
@@ -82,15 +85,16 @@
     background: $main-gradient;
     color: #fff;
     text-align: center;
-    margin: 28px 29px 30px;
+    margin-top: 30px;
     border: none;
     &:hover {
         filter: brightness(105%);
     }
     @media (max-width: $screen-md) {
         width: 240px;
-        margin: 28px 20px 30px;
         font-size: 10px;
+        height: 35px;
+        margin-top: 15px;
     }
 }
 .promo {
@@ -100,6 +104,6 @@
     height: 48px;
     text-align: right;
     position: absolute;
-    top: 834px;
-    right: 5%; 
+    top: 730px;
+    right: 0;
 }
