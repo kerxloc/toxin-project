@@ -11,6 +11,7 @@
 @import './components/calendar/calendar.scss';
 @import './components/search_room/search_room.scss';
 @import './components/registration_block/registration_block.scss';
+@import './components/login_block/login_block.scss';
 
 body {
     height: 100%;
@@ -20,7 +21,7 @@ body {
         }
     }
 }
-
+// Material Icons
 .icon {
     display: flex;
     align-items: center;
@@ -60,6 +61,12 @@ body {
             font-size: 20px;
             margin-left: -55px;
         }
+    }
+    &__arrow-authentication {
+        @include arrow-style;
+        margin-left: -46px;
+        color: #fff;
+        z-index: 10;
     }
     &__arrow-input {
         @include arrow-style;

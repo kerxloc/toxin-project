@@ -21,10 +21,16 @@
     &__dates-input {
         @include input-style;
         width: 251px;
+        &::placeholder {
+            color: rgba(31, 32, 65, 0.75);
+        }
     }
     &__guest-input {
         @include input-style;
         width: 251px;
+        &::placeholder {
+            color: rgba(31, 32, 65, 0.75);
+        }
     }
     &__group-1 {
         margin-bottom: 30px;
@@ -289,6 +295,9 @@
     &__input {
         @include input-style;
         width: 251px;
+        &::placeholder {
+            color: rgba(31, 32, 65, 0.75);
+        }
     }
 }
 .facilities-extra {

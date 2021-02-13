@@ -1,0 +1,13 @@
+section.signin
+    img.signin-img.ibg(src="../assets/img/bg-reg.png")
+    form.signin__outter.signin-inner(action="#")
+        h1.signin-inner__title Войти
+        div.signin-authentication
+            input.signin-authentication__email(type="text" name="email" required placeholder="Email")
+            input.signin-authentication__password(type="password" name="password" required placeholder="Пароль")
+            div.icon
+                input.signin-authentication__button(type="submit" value="Войти")
+                i.icon__arrow-authentication arrow_forward
+            div.signin-block
+                span.signin-block__text Нет аккаунта на Toxin?
+                a.signin-block__button(href="registration_page.html") Создать

@@ -43,10 +43,7 @@
         @include input-style;
         width: 135px;
         &::placeholder {
-            @include placeholder-style;
-                 @media (max-width: $screen-md) {
-                    font-size: 11px;
-            }
+            color: rgba(31, 32, 65, 0.75);
         }
         @media (max-width: $screen-md) {
             width: 95px;
@@ -55,10 +52,7 @@
             @include input-style;
             width: 305px;
             &::placeholder {
-                @include placeholder-style;
-                @media (max-width: $screen-md) {
-                    font-size: 11px;
-                }
+                color: rgba(31, 32, 65, 0.75);
             }
             @media (max-width: $screen-md) {
                 width: 225px;

@@ -1,35 +1,36 @@
 section.reg-main
     img.reg-main__img.ibg(src="../assets/img/bg-reg.png")
     form.reg-account.reg-inner(action="#")
-        span.reg-inner__title Регистрация аккаунта
+        h1.reg-inner__title Регистрация аккаунта
         div.reg-top
-            input.reg-top__name(type="text" placeholder="Имя")
-            input.reg-top__surname(type="text" placeholder="Фамилия")
+            input.reg-top__name(type="text" name="name" required placeholder="Имя")
+            input.reg-top__surname(type="text" name="surname" required placeholder="Фамилия")
             div.reg-top__gender
                 label.male
-                    input.male__input(type="radio" name="gender" value="male")
+                    input.male__input(type="radio" name="gender" required value="male")
                     span.male__text Мужчина
                 label.female
-                    input.female__input(type="radio" name="gender" value="female")
+                    input.female__input(type="radio" name="gender" required value="female")
                     span.female__text Женщина
         div.reg-middle
             label.reg-middle__birthday-text Дата рождения
-                input.reg-middle__birthday-input(type="text" placeholder="ДД.ММ.ГГГГ")
+                input.reg-middle__birthday-input(type="text" name="birthday-date" placeholder="ДД.ММ.ГГГГ")
         div.reg-bottom
             label.reg-bottom__authentication Данные для входа в сервис
-                input.reg-bottom__email(type="text" placeholder="Email")
-                input.reg-bottom__password(type="password" placeholder="Пароль")
+                input.reg-bottom__email(type="text" name="email" placeholder="Email")
+                input.reg-bottom__password(type="password" name="password" minlength="6" required placeholder="Пароль")
             div.special-offer
-                input.special-offer__checkbox(type="checkbox" id="check" name="offer" value="special-offer" hidden)
+                input.special-offer__checkbox(type="checkbox" id="check" name="offer" value="true" hidden)
                 label.special-offer__toggle(for="check")
                     div.special-offer__circle
                     span.special-offer__text Получатьспецпредложения
-        div.reg-buttons
-            input.reg-buttons__registration(type="submit" value="Зарегистрироваться")
-            div.login
-                span.login__text Уже есть аккаунт на Toxin
-                a(href="#")
-                    button.login__button Войти
+        div.reg-button
+            div.icon
+                input.reg-button__registration(type="submit" value="Зарегистрироваться")
+                i.icon__arrow-authentication arrow_forward
+        div.signin-block
+            span.signin-block__text Уже есть аккаунт на Toxin
+            a.signin-block__button(href="login_page.html") Войти
 
 
 
