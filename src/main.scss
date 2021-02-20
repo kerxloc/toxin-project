@@ -34,6 +34,9 @@ body {
     &__expand-facilities {
         @include expand-style(20px, none);
         transition: all 0.3s ease 0s;
+        @media (max-width: $screen-md) {
+            display: none;
+        }
         &_active {
             transform: rotate(-180deg);
             transition: all 0.3s ease 0s;
@@ -58,6 +61,7 @@ body {
         margin-top: 30px;
         color: #fff;
         z-index: 1;
+        background: none;
         @media (max-width: $screen-md) {
             font-size: 20px;
             margin-left: -40px;
@@ -88,6 +92,9 @@ body {
         @include arrow-style;
         color: #fff;
         padding-right: 5px;
+        @media (max-width: $screen-md) {
+            font-size: 18px;
+        }
     }
 }
 
@@ -95,14 +102,12 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    @media (max-width: $screen-xl) {
-        max-width: 993px;
-    }
     @media (max-width: $screen-lg) {
         max-width: 768px;
     }
     @media (max-width: $screen-md) {
         max-width: 577px;
+        padding: 0 10px;
     }
 }
 

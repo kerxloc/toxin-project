@@ -1,8 +1,15 @@
 .search-page {
     display: flex;
+    position: relative;
     &__side {
         display: flex;
         flex-direction: column;
+        @media (max-width: $screen-md) {
+            display: none;
+            &_active {
+                display: flex;
+            }
+        }
     }
 }
 
@@ -24,6 +31,12 @@
         &::placeholder {
             color: rgba(31, 32, 65, 0.75);
         }
+        @media (max-width: $screen-lg) {
+            width: 230px;
+        }
+        @media (max-width: $screen-md) {
+            width: 170px;
+        }
     }
     &__guest-input {
         @include input-style;
@@ -31,9 +44,18 @@
         &::placeholder {
             color: rgba(31, 32, 65, 0.75);
         }
+        @media (max-width: $screen-lg) {
+            width: 230px;
+        }
+        @media (max-width: $screen-md) {
+            width: 170px;
+        }
     }
     &__group-1 {
         margin-bottom: 30px;
+        @media (max-width: $screen-md) {
+            margin-bottom: 15px;
+        }
     }
 }
 
@@ -41,6 +63,9 @@
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    @media (max-width: $screen-md) {
+        margin-top: 15px;
+    }
     .price-header {
         display: flex;
         align-items: center;
@@ -48,6 +73,9 @@
         &__title {
             @include label-style;
             margin-right: 50px;
+            @media (max-width: $screen-md) {
+                margin-right: 25px;
+            }
         }
         &__prices {
             font-family: $main-font;
@@ -55,6 +83,9 @@
             line-height: 15px;
             text-transform: uppercase;
             color: rgba(31, 32, 65, 0.5);
+            @media (max-width: $screen-md) {
+                font-size: 11px;
+            }
         }
     }
     .price-filter {
@@ -63,6 +94,12 @@
         border: 1px solid rgba(31, 32, 65, 0.25);
         border-radius: 3px;
         cursor: pointer;
+        @media (max-width: $screen-lg) {
+            width: 240px;
+        }
+        @media (max-width: $screen-md) {
+            width: 180px;
+        }
         .noUi-base,
         .noUi-connects {
             position: relative;
@@ -82,7 +119,7 @@
             cursor: pointer;
         }
         .noUi-connect {
-            background-color: #bc9cff;
+            background: $secondary-gradient;
             width: 100%;
             height: 105%;
         }
@@ -90,12 +127,15 @@
             width: 12px;
             height: 12px;
             border: 2px solid #fff;
-            background-color: #bc9cff;
+            background: $secondary-gradient;
             border-radius: 10px;
             position: relative;
             top: -6px;
             right: -20px;
             cursor: pointer;
+            @media (max-width: $screen-md) {
+                right: -10px;
+            }
         }
     }
     .price-footer {
@@ -104,11 +144,17 @@
         line-height: 14px;
         color: rgba(31, 32, 65, 0.5);
         margin-top: 14px;
+        @media (max-width: $screen-md) {
+            font-size: 9px;
+        }
     }
 }
 
 .checkbox-rules {
     margin-top: 30px;
+    @media (max-width: $screen-md) {
+        margin-top: 15px;
+    }
     &__title {
         @include label-style;
         margin-bottom: 16px;
@@ -137,10 +183,16 @@
             font-size: 14px;
             line-height: 18px;
             color: rgba(31, 32, 65, 0.5);
+            @media (max-width: $screen-md) {
+                font-size: 12px;
+            }
         }
         &__checkbox {
             @include checkbox-style(#bc9cff);
             margin-right: 10px;
+            @media (max-width: $screen-md) {
+                margin-right: 5px;
+            }
         }
     }
     .pets {
@@ -167,10 +219,16 @@
                 font-size: 14px;
                 line-height: 18px;
                 color: rgba(31, 32, 65, 0.5);
+                @media (max-width: $screen-md) {
+                    font-size: 12px;
+                }
             }
             &__checkbox {
                 @include checkbox-style(#bc9cff);
                 margin-right: 10px;
+                @media (max-width: $screen-md) {
+                    margin-right: 5px;
+                }
             }
     }
     .guest-limit {
@@ -196,15 +254,24 @@
                 line-height: 18px;
                 color: rgba(31, 32, 65, 0.5);
                 margin-top: 2px;
+                @media (max-width: $screen-md) {
+                    font-size: 12px;
+                }
             }
             &__checkbox {
                 @include checkbox-style(#bc9cff);
                 margin-right: 10px;
+                @media (max-width: $screen-md) {
+                    margin-right: 5px;
+                }
             }
     }
 }
 .checkbox-availability {
     margin-top: 30px;
+    @media (max-width: $screen-md) {
+        margin-top: 15px;
+    }
     &__title {
         @include label-style;
         margin-bottom: 16px;
@@ -230,12 +297,18 @@
         &__checkbox {
             @include checkbox-style(rgba(31, 32, 65, 0.25));
             margin-right: 10px;
+            @media (max-width: $screen-md) {
+                margin-right: 5px;
+            }
         }
         &__title {
             font-family: $mainf-bold;
             font-size: 14px;
             line-height: 18px;
             color: rgba(31, 32, 65, 0.75);
+            @media (max-width: $screen-md) {
+                font-size: 12px;
+            }
         }
         &__subtitle {
             display: block;
@@ -243,7 +316,12 @@
             font-size: 12px;
             line-height: 14px;
             color: rgba(31, 32, 65, 0.5);
-            margin: 5px 0 0 33px        
+            margin: 5px 0 0 33px;
+            @media (max-width: $screen-md) {
+                font-size: 10px;
+                line-height: 12px;
+                margin-left: 23px;
+            }
         }
     }
     .assistant {
@@ -268,12 +346,18 @@
         &__checkbox {
             @include checkbox-style(rgba(31, 32, 65, 0.25));
             margin-right: 10px;
+            @media (max-width: $screen-md) {
+                margin-right: 5px;
+            }
         }
         &__title {
             font-family: $mainf-bold;
             font-size: 14px;
             line-height: 18px;
             color: rgba(31, 32, 65, 0.75);
+            @media (max-width: $screen-md) {
+                font-size: 12px;
+            }
         }
         &__subtitle {
             display: block;
@@ -281,13 +365,21 @@
             font-size: 12px;
             line-height: 14px;
             color: rgba(31, 32, 65, 0.5);
-            margin: 5px 0 0 33px       
+            margin: 5px 0 0 33px;
+            @media (max-width: $screen-md) {
+                font-size: 10px;
+                line-height: 12px;
+                margin-left: 23px;
+            }    
         }
     }
 }
 
 .facilities {
     margin-top: 30px;
+    @media (max-width: $screen-md) {
+        margin-top: 15px;
+    }
     &__title {
         @include label-style;
         margin-bottom: 5px;
@@ -298,12 +390,21 @@
         &::placeholder {
             color: rgba(31, 32, 65, 0.75);
         }
+        @media (max-width: $screen-lg) {
+            width: 230px;
+        }
+        @media (max-width: $screen-md) {
+            width: 170px;
+        }
     }
 }
 .facilities-extra {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    @media (max-width: $screen-md) {
+        margin-top: 15px;
+    }
     .extra-text {
         display: flex;
         align-items: center;
@@ -311,12 +412,22 @@
         &__title {
             @include label-style;
             margin-right: 23px;
+            @media (max-width: $screen-lg) {
+                margin-right: 4px;
+            }
+            @media (max-width: $screen-md) {
+                margin-right: 0;
+            }
         }
     }
     .facilities-items {
         visibility: hidden;
         transition: all 0.3s ease 0s;
         opacity: 0;
+        @media (max-width: $screen-md) {
+            visibility: visible;
+            opacity: 1;
+        }
         &__active {
             visibility: visible;
             transition: all 0.3s ease 0s;
@@ -343,23 +454,44 @@
         &__checkbox {
             @include checkbox-style(rgba(31, 32, 65, 0.25));
             margin: 0 10px 10px 0;
+            @media (max-width: $screen-md) {
+                margin: 0 5px 10px 0;
+            }
         }
         &__title {
             font-family: $main-font;
             font-size: 14px;
             line-height: 18px;
             color: rgba(31, 32, 65, 0.5);
+            @media (max-width: $screen-md) {
+                font-size: 12px;
+            }
         }
     }
 }
 
 .hotel-number {
-    margin: 15px 0 0 60px;
+    margin: 10px 0 0 60px;
     &__title {
         font-family: $mainf-bold;
         font-size: 24px;
         line-height: 29px;
         color: #1f2041;
+        margin-bottom: 20px;
+        @media (max-width: $screen-lg) {
+            font-size: 19px;
+        }
+        @media (max-width: $screen-md) {
+            font-size: 15px;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+    @media (max-width: $screen-lg) {
+        margin-left: 30px;
+    }
+    @media (max-width: $screen-lg) {
+        margin-left: 30px;
     }
     .rooms {
         &__row {
@@ -369,6 +501,12 @@
             margin-bottom: 20px;
             @media (max-width: $screen-xl) {
                 margin-bottom: 0;
+            }
+            @media (max-width: $screen-lg) {
+                justify-content: center;
+            }
+            @media (max-width: $screen-md) {
+                flex-direction: column;
             }
         }
         &__item {
@@ -383,11 +521,19 @@
                 margin-left: 0;
             }
             @media (max-width: $screen-xl) {
+                margin-bottom: 12px;
+                box-shadow: 0px 5px 20px rgba(31, 32, 65, 0.05);
                 &:last-child {
                     margin-left: 0;
                 }
-                margin-bottom: 12px;
-                box-shadow: 0px 5px 20px rgba(31, 32, 65, 0.05);
+            }
+            @media (max-width: $screen-lg) {
+                &:nth-child(2) {
+                    margin-left: 0;
+                }
+            }
+            @media (max-width: $screen-md) {
+                width: 230px;
             }
         }
         &__main {
@@ -395,6 +541,10 @@
             justify-content: space-between;
             margin: 20px 0 10px;
             padding: 0 17px 0 20px;
+            @media (max-width: $screen-md) {
+                margin: 15px 0 5px;
+                padding: 0 14px 0 11px;
+            }
         }
         &__bottom {
             display: flex;
@@ -469,13 +619,31 @@
             }
         }
         .room {
+            position: relative;
+            &::after {
+                content: '';
+                width: 230px;
+                height: 1px;
+                background: rgba(31, 32, 65, 0.1);
+                position: absolute;
+                top: 30px;
+                @media (max-width: $screen-md) {
+                    width: 180px;
+                }
+            }
             &__number {
                 font-family: $mainf-bold;
                 font-size: 13px;
                 line-height: 17px;
                 color: #1f2041;
+                @media (max-width: $screen-md) {
+                    font-size: 10px;
+                }
                 &_big {
                     font-size: 18px;
+                    @media (max-width: $screen-md) {
+                        font-size: 13px;
+                    }
                 }
             }
             &__luxury {
@@ -485,6 +653,9 @@
                 text-transform: uppercase;
                 color: #bc9cff;
                 margin: 5px 20px 0 0;
+                @media (max-width: $screen-md) {
+                    font-size: 10px;
+                }
             }
             &__price {
                 font-family: $mainf-bold;
@@ -492,34 +663,43 @@
                 line-height: 129%;
                 color: rgba(31, 32, 65, 0.5);
                 margin-top: 4px;
+                @media (max-width: $screen-md) {
+                    font-size: 12px;
+                }
                 &_light {
                     font-family: $main-font;
                     font-size: 12px;
+                    @media (max-width: $screen-md) {
+                        font-size: 10px;
+                    }
                 }
             }
-        }
-        .line {
-                width: 230px;
-                height: 1px;
-                background: rgba(31, 32, 65, 0.1);
-                margin: 0 20px;
         }
         .rating {
             padding: 10px 20px 0;
             display: flex;
             align-items: center;
+            @media (max-width: $screen-md) {
+                padding: 10px 10px 0;
+            }
             &__stars {
                 display: flex;
                 align-items: center;
             }
             &__star {
                 @include star-style;
+                @media (max-width: $screen-md) {
+                    font-size: 20px;
+                }
             }
             &__reviews {
                 font-family: $mainf-bold;
                 font-size: 14px;
                 line-height: 129%;
                 color: rgba(31, 32, 65, 0.5);
+                @media (max-width: $screen-md) {
+                    font-size: 12px;
+                }
                 &_light {
                     font-family: $main-font;
                 }
@@ -551,7 +731,12 @@
             color: #fff;
             background: $main-gradient;
             cursor: pointer;
-        }  
+        }
+        @media (max-width: $screen-md) {
+            width: 30px;
+            height: 30px;
+            font-size: 11px;
+        }
     }
     &__arrow {
         display: flex;
@@ -565,6 +750,10 @@
         &:hover {
             filter: brightness(105%);
         }
+        @media (max-width: $screen-md) {
+            width: 30px;
+            height: 30px;
+        }
     }
 }
 .rent-variation {
@@ -577,5 +766,25 @@
         line-height: 171%;
         color: rgba(31, 32, 65, 0.75);
         margin-bottom: 70px;
+        @media (max-width: $screen-md) {
+            font-size: 11px;
+        }
+    }
+}
+.filters-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    &__button {
+        display: none;
+        @include buttons-style;
+        background-color: #fff;
+        border: 2px solid #bc9cff;
+        padding: 5px 5px;
+        font-size: 10px;
+        @media (max-width: $screen-md) {
+            display: block;
+        }
     }
 }

@@ -20,17 +20,30 @@ module.exports = {
     paths: PATHS
   },
     entry: {
-        app: PATHS.src,
-        roomList: `${PATHS.src}/room-list.js`
+      app: PATHS.src,
+      roomList: `${PATHS.src}/js/room-list.js`,
+      loginReg: `${PATHS.src}/js/login-reg.js`
     },
     output: {
-        filename: `${PATHS.assets}js/[name].js`,
-        path: PATHS.dist,
-        publicPath: '/' 
+      filename: `${PATHS.assets}js/[name].[hash].js`,
+      path: PATHS.dist,
+      publicPath: '/' 
+    },
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            name: 'vendors',
+            test: /node_modules/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
     },
     plugins: [
         new MiniCssExtractPlugin({
-          filename: `${PATHS.assets}css/[name].css`
+          filename: `${PATHS.assets}css/[name].[hash].css`
         }),
         new CopyWebpackPlugin([
           { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },

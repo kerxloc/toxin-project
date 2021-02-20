@@ -30,6 +30,9 @@
     line-height: 15px;
     text-transform: uppercase;
     color: #1f2041;
+    @media (max-width: $screen-md) {
+        font-size: 10px;
+    }
 }
 
 @mixin input-style {
@@ -64,6 +67,10 @@
     height: 20px;
     border: 1px solid $color;
     border-radius: 4px;
+    @media (max-width: $screen-md) {
+        width: 15px;
+        height: 15px;
+    }
     &::before {
         content: '';
         position: absolute;
@@ -72,6 +79,12 @@
         width: 3px;
         height: 9px;
         transition: all linear .3s;
+        @media (max-width: $screen-md) {
+            width: 2px;
+            height: 8px;
+            left: 4.5px;
+            top: 4px;
+        }
     }
     &::after {
         content: '';
@@ -81,6 +94,12 @@
         width: 3px;
         height: 9px;
         transition: all linear .3s;
+        @media (max-width: $screen-md) {
+            width: 2px;
+            height: 8px;
+            top: 4px;
+            left: 8.5px;
+        }
     }
 }
 
@@ -154,6 +173,7 @@
     text-align: center;
     cursor: pointer;
     user-select: none;
+    border: none;
     &:hover {
         filter: brightness(120%);
     }
@@ -204,4 +224,25 @@ $maxWidth: 1440;
  $addSize: $pcSize - $mobSize;
  $maxWidth: $maxWidth - 320;
  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin validation-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(31, 32, 65, 0.15);
+    border-radius: 50%;
+    &_valid {
+        background-color: #bc9cff;
+        box-shadow: 0 0 5px #bc9cff,
+                    0 0 10px #bc9cff,
+                    0 0 20px #bc9cff,
+                    0 0 40px #bc9cff,
+    }
+    &_invalid {
+        background-color: rgba(31, 32, 65, 0.15);
+        box-shadow: 0 0 5px #bc9cff,
+                    0 0 10px #bc9cff,
+                    0 0 20px #bc9cff,
+                    0 0 40px #bc9cff,
+    }
 }

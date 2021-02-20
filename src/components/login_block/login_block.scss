@@ -42,17 +42,25 @@
         padding: 20px 15px 0;   
     }
 }
-
 .signin-authentication {
     margin-top: 20px;
     @media (max-width: $screen-md) {
         margin-top: 10px;
     }
-    &__email {
-        @include input-style;
-        width: 305px;
-        @media (max-width: $screen-md) {
-            width: 230px;
+    .email-box {
+        position: relative;
+        &__email {
+            @include input-style;
+            width: 305px;
+            @media (max-width: $screen-md) {
+                width: 230px;
+            }
+        }
+        &__indicator {
+            @include validation-indicator;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
     }
     &__password {

@@ -19,8 +19,8 @@
         color: rgba(31, 32, 65, .75);
         @media (max-width: $screen-md) {
             font-size: 11px;
-            order: 2;
-            margin-top: 15px;
+            order: 1;
+            margin-top: 10px;
             line-height: normal;
         }
     }
@@ -32,8 +32,9 @@
             }
         }
         @media (max-width: $screen-md) {
-            order: 1;
+            order: 2;
             margin-right: 0;
+            margin-top: 10px;
         }
     }
 }

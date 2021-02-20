@@ -85,20 +85,18 @@ const renderCalendar = () => {
             }
         });
     }
-    function removeInputValue() {
+    function removeInputValue(e) {
         arrivalInput.removeAttribute("value");
         departureInput.removeAttribute("value");
         monthDays.addEventListener("click", arrivalDate);
         monthDays.removeEventListener("click", departureDate);
+        e.preventDefault();
     }
 
     calendarClearButton.addEventListener("click", removeInputValue);
 
-    calendarApplyButton.addEventListener("click", () => {
-        if (arrivalInput.getAttribute("value") == departureInput.getAttribute("value")) {
-            alert("Значения не могу быть одинаковыми");
-            removeInputValue();
-        }
+    calendarApplyButton.addEventListener("click", (e) => {
+        //e.preventDefault();
     })
 }
 

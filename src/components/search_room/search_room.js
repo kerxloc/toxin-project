@@ -75,3 +75,7 @@ const checkBtns = () => {
     btnPrev.disabled = position === 0;
 };
 checkBtns();
+
+const filterButton = document.querySelector(".filters-mobile__button");
+const filterBody = document.querySelector(".search-page__side");
+filterButton.addEventListener("click", () => { filterBody.classList.toggle("search-page__side_active") });

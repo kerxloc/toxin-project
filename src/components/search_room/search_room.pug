@@ -31,7 +31,6 @@ mixin rooms-list(img, number, luxury, star_1, star_2, star_3, star_4, star_5, pr
             span.room__luxury= luxury
             div.room__price= price
                 span.room__price_light  в сутки
-        div.line
         div.rooms__bottom.rating
             div.rating__stars
                 i.rating__star.material-icons= star_1
@@ -43,7 +42,7 @@ mixin rooms-list(img, number, luxury, star_1, star_2, star_3, star_4, star_5, pr
                 span.rating__reviews_light  Отзывов
 
 section.search-page.container
-    aside.search-page__side
+    aside.search-page__side(data-da="filters-mobile, last, 577")
         div.residence-guests
             div.residence-guests__group-1
                 label.residence-guests__dates-title(for="residence") Даты пребывания в отеле
@@ -106,6 +105,8 @@ section.search-page.container
                 +checkbox-list("Телевизор")
                 +checkbox-list("Шампунь")
     div.search-page__main.hotel-number
+        div.filters-mobile
+            button.filters-mobile__button Фильтры
         h1.hotel-number__title Номера, которые мы для вас подобрали
         div.hotel-number__rooms.rooms
             div.rooms__row

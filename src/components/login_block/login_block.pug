@@ -4,7 +4,9 @@ section.signin
         form.signin__outter.signin-inner(action="#")
             h1.signin-inner__title Войти
             div.signin-authentication
-                input.signin-authentication__email(type="text" name="email" required placeholder="Email")
+                div.email-box
+                    input.email-box__email(type="text" name="email" required placeholder="Email")
+                    span.email-box__indicator
                 input.signin-authentication__password(type="password" name="password" required placeholder="Пароль")
                 div.icon
                     input.signin-authentication__button(type="submit" value="Войти")

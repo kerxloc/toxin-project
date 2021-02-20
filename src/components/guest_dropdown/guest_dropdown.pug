@@ -1,19 +1,18 @@
-block mixins
-    mixin text(column, title, id)
-        -var column
-        if column == 1
-            span.guest-inner__text= title
-        else if column == 3
-            span.guest-inner__counter(id=id)= title
+mixin text(column, title, id)
+    -var column
+    if column == 1
+        span.guest-inner__text= title
+    else if column == 3
+        span.guest-inner__counter(id=id)= title
 
-    mixin buttons(button, id)
-        -var button
-        if button == "-"
-            div.guest-inner__circle-minus.minus-button(id=id)
-                span.minus-button__text -
-        else if button == "+"
-            div.guest-inner__circle-plus.plus-button(id=id)
-                span.plus-button__text +
+mixin buttons(button, id)
+    -var button
+    if button == "-"
+        div.guest-inner__circle-minus.minus-button(id=id)
+            span.minus-button__text -
+    else if button == "+"
+        div.guest-inner__circle-plus.plus-button(id=id)
+            span.plus-button__text +
 
 div.guest-dropdown.guest-inner
     div.guest-inner__content

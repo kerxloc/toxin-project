@@ -18,7 +18,9 @@ section.reg-main
                     input.reg-middle__birthday-input(type="text" name="birthday-date" placeholder="ДД.ММ.ГГГГ")
             div.reg-bottom
                 span.reg-bottom__authentication Данные для входа в сервис
-                input.reg-bottom__email(type="text" name="email" placeholder="Email")
+                div.email-box
+                    input.email-box__email(type="text" name="email" placeholder="Email" id="reg-email")
+                    span.email-box__indicator
                 input.reg-bottom__password(type="password" name="password" minlength="6" required placeholder="Пароль")
                 div.special-offer
                     input.special-offer__checkbox(type="checkbox" id="check" name="offer" value="true" hidden)
