@@ -1,5 +1,5 @@
-import * as noUiSlider from '../../assets/js/nouislider.min';
-import * as wNumb from '../../assets/js/wnumb.min';
+import * as noUiSlider from '../../assets/vendors/nouislider.min';
+import * as wNumb from '../../assets/vendors/wnumb.min';
 
 // Create Slider
 const priceSlider = document.querySelector(".price-filter");

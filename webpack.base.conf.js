@@ -17,12 +17,14 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter(filename => filename.endsWith('.p
 module.exports = {
 
   externals: {
-    paths: PATHS
+    paths: PATHS,
+    moment: 'moment'
   },
     entry: {
       app: PATHS.src,
       roomList: `${PATHS.src}/js/room-list.js`,
-      loginReg: `${PATHS.src}/js/login-reg.js`
+      loginReg: `${PATHS.src}/js/login-reg.js`,
+      roomDetails: `${PATHS.src}/js/room-details.js` 
     },
     output: {
       filename: `${PATHS.assets}js/[name].[hash].js`,
@@ -47,6 +49,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
           { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+          { from: `${PATHS.src}/components/room_details/images`, to: `${PATHS.assets}img/room-details` },
           { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` }
         ]),
         ...PAGES.map(page => new HtmlWebpackPlugin({

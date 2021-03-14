@@ -1,0 +1,1 @@
+import '../components/room_details/room_details';

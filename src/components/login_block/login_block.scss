@@ -63,13 +63,16 @@
             right: 20px;
         }
     }
-    &__password {
-        @include input-style;
-        width: 305px;
+    .password-box {
+        position: relative;
         margin: 10px 0 20px;
-        @media (max-width: $screen-md) {
-            width: 230px;
-            margin: 10px 0 15px;
+        &__password {
+            @include input-style;
+            width: 305px;
+            @media (max-width: $screen-md) {
+                width: 230px;
+                margin: 10px 0 15px;
+            }
         }
     }
     &__button {

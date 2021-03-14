@@ -1,0 +1,468 @@
+.room-images {
+    display: flex;
+    flex: 0 0 100%;
+    height: 485px;
+    overflow: hidden;
+    &__img-1 {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.small {
+    display: flex;
+    flex-direction: column;
+    &__img-2 {
+        height: 100%;
+    }
+    &__img-3 {
+        height: 100%;
+    }
+}
+
+.room-about {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    .room-info {
+        display: flex;
+        flex-direction: column;
+        &__title {
+            font-family: $mainf-bold;
+            font-size: 19px;
+            line-height: 171%;
+            color: #1f2041;
+            margin-bottom: 20px;
+        }
+    }
+    .comfort {
+        display: flex;
+        align-items: center;
+        width: 280px;
+        margin-bottom: calc(40px - 17px);
+        padding-bottom: 17px;
+        border-bottom: 1px solid rgba(31, 32, 65, .1);
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        &__icon {
+            font-family: $icon-font;
+            font-size: 48px;
+            line-height: 41px;
+            margin-right: 10px;
+        }
+    }
+    .comfort-text {
+        display: flex;
+        flex-direction: column;
+        &__title {
+            font-family: $mainf-bold;
+            font-size: 14px;
+            line-height: 171%;
+            color: rgba(31, 32, 65, .75);
+        }
+        &__subtitle {
+            display: block;
+            font-family: $main-font;
+        }
+    }
+    .impression {
+        &__title {
+            font-family: $mainf-bold;
+            font-size: 19px;
+            line-height: 171%;
+            color: #1f2041;
+            margin-bottom: 20px;
+        }
+        &__body {
+            display: flex;
+            align-items: center;
+        }
+        .impression-body {
+            .round-diagram {
+                position: relative;
+                &__number {
+                font-family: $mainf-bold;
+                font-size: 24px;
+                color: #bc9cff;
+                text-align: center;
+                position: absolute;
+                top: 40px;
+                left: 30px;
+                }
+                &__text {
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    line-height: 15 / 12 * 100%;
+                    display: block;
+                }
+            }
+            &__list {
+                display: flex;
+                flex-direction: column;
+                margin: 25px 0 0 30px;
+                .impression-item {
+                    display: flex;
+                    align-items: center;
+                    &__circle {
+                        &_orange {
+                            @include booking-circles(180deg, #FFE39C 0%, #FFBA9C 100%);
+                        }
+                        &_green {
+                            @include booking-circles(180deg, #6FCF97 0%, #66D2EA 100%);
+                        }
+                        &_purple {
+                            @include booking-circles(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                        }
+                        &_gray {
+                            @include booking-circles(180deg, #919191 0%, #3D4975 100%);
+                        }
+                    }
+                    &__text {
+                        @include booking-style(171%);
+                    }
+                }
+            }
+        }
+    }
+    .booking-outter {
+        width: calc(380px - 60px);
+        height: calc(511px - 40px);
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+        padding: 40px 30px 0;
+    }
+    .booking-inner {
+        display: flex;
+        flex-direction: column;
+        &__button {
+            @include buttons-style;
+            color: #fff;
+            width: 320px;
+            height: 44px;
+            background: $main-gradient;
+        }
+        .booking-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            &__room-number {
+                font-family: $mainf-bold;
+                font-size: 14px;
+                line-height: 17px;
+                color: #1F2041;
+                &_large {
+                    font-size: 24px;
+                    line-height: 29px;
+                }
+            }
+            &__luxury {
+                font-family: $mainf-bold;
+                font-size: 12px;
+                line-height: 15px;
+                text-transform: uppercase;
+                color: #BC9CFF;
+            }
+            &__price {
+                font-family: $mainf-bold;
+                font-size: 14px;
+                line-height: 129%;
+                color: rgba(31, 32, 65, 0.5);
+                margin-left: 90px;
+                &_small {
+                    font-family: $main-font;
+                }
+            }
+        }
+        .booking-input {
+            margin-top: 20px;
+            &__row {
+                display: flex;
+                align-items: center;
+            }
+            .booking-arrival {
+                margin-right: 28px;
+                &__label {
+                    @include label-style;
+                    margin-bottom: 5px;
+                }
+                &__input {
+                    @include input-style;
+                    width: calc(150px - 15px);
+                }
+            }
+            .booking-departure {
+                &__label {
+                    @include label-style;
+                    margin-bottom: 5px;
+                }
+                &__input {
+                    @include input-style;
+                    width: calc(150px - 15px);
+                }
+            }
+            .booking-guests {
+                margin-top: 20px;
+                &__label {
+                    @include label-style;
+                    margin-bottom: 5px;
+                }
+                &__input {
+                    @include input-style;
+                    width: calc(320px - 15px);
+                }
+            }
+        }
+        .booking-price {
+            margin-top: 20px;
+            .price-per-day {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                &__calculate {
+                    @include booking-style(171%);
+                }
+                &__total {
+                    @include booking-style(171%);
+                }
+            }
+            .discount {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                &-main {
+                    display: flex;
+                    align-items: center;
+                    &__value {
+                        @include booking-style(171%);
+                        width: 214px;
+                    }
+                    &__info {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        border: 1px solid rgba(31, 32, 65, 0.25);
+                        text-align: center;
+                        font-family: $mainf-bold;
+                        font-size: 12px;
+                        line-height: 171%;
+                        color: rgba(31, 32, 65, 0.25);
+                        margin-left: 5px;
+                    }
+                }
+                &__total {
+                    @include booking-style(171%);  
+                }
+            }
+            .additional-services {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                &-main {
+                    display: flex;
+                    align-items: center;
+                    &__title {
+                        @include booking-style(129%);
+                        width: 214px;
+                    }
+                    &__info {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        border: 1px solid rgba(31, 32, 65, 0.25);
+                        text-align: center;
+                        font-family: $mainf-bold;
+                        font-size: 12px;
+                        line-height: 171%;
+                        color: rgba(31, 32, 65, 0.25);
+                        margin-left: 5px;           
+                    }
+                }
+                &__value {
+                    @include booking-style(171%);
+                }
+            }
+            .total {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 30px;
+                margin-bottom: 20px;
+                position: relative;
+                &::after {
+                    content: '';
+                    width: 182px;
+                    border: 1px dashed rgba(31, 32, 65, 0.25);
+                    position: absolute;
+                    top: 20px;
+                    left: 60px;
+                }
+                &__title {
+                    font-family: $mainf-bold;
+                    font-size: 19px;
+                    line-height: 170%;
+                    color: #1F2041;
+                }
+                &__sum {
+                    font-family: $mainf-bold;
+                    font-size: 19px;
+                    line-height: 170%;
+                    color: #1F2041;
+                }
+            }
+        }
+    }
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    //margin-top: -130px;
+    .reviews-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 711px;
+        &__title {
+            font-family: $mainf-bold;
+            font-size: 19px;
+            line-height: 171%;
+            color: #1f2041;
+        }
+        &__review-number {
+            font-family: $main-font;
+            font-size: 14px;
+            line-height: 100%;
+            color: rgba(31, 32, 65, .5);
+        }
+    }
+    .commentary {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        .commentary-top {
+            display: flex;
+            align-items: center;
+            &__avatar {
+                flex: 0 0 88px;
+                height: 88px;
+                filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, .1));
+                margin: 0 0 0 -20px;
+                overflow: hidden;
+                img {
+                    max-width: 100%;
+                }
+            }
+            &__name {
+                font-family: $mainf-bold;
+                font-size: 14px;
+                line-height: 171%;
+                color: rgba(31, 32, 65, .75);
+                margin: -9px 0 0 -10px;
+            }
+            &__days {
+                font-family: $main-font;
+                display: block;
+            }
+        }
+        .commentary-main {
+            display: flex;
+            margin-top: -10px;
+            &__comment {
+                font-family: $main-font;
+                font-size: 14px;
+                line-height: 171%;
+                color: rgba(31, 32, 65, .75);
+                width: 653px;
+                margin: 0;
+            }
+            .like {
+                width: calc(40px - 7px);
+                height: 18px;
+                background: #fff;
+                border: 1px solid rgba(31, 32, 65, .25);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                padding-left: 5px;
+                margin-right: 14px;
+                &__heart {
+                    font-family: $icon-font;
+                    font-size: 10px;
+                    color: rgba(31, 32, 65, .25);
+                    width: 20px;
+                }
+                &__number {
+                    font-family: $main-font;
+                    font-size: 10px;
+                    color: rgba(31, 32, 65, .25);
+                }
+            }
+        }
+    }
+}
+
+.policy {
+    display: flex;
+    margin-top: 30px;
+    .policy-rules {
+        margin-right: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &__title {
+            font-family: $mainf-bold;
+            font-size: 19px;
+            line-height: 171%;
+            color: #1f2041;
+            margin: 0 0 15px 20px;
+        }
+        &__main {
+            display: flex;
+            align-items: center;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            &:last-child {
+                .policy-rules__circle {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        &__circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(31, 32, 65, .25);
+            margin-right: 10px;
+        }
+        &__text {
+            font-family: $main-font;
+            font-size: 14px;
+            line-height: 171%;
+            color: rgba(31, 32, 65, .75);
+        }
+    }
+    .cancel {
+        &__title {
+            font-family: $mainf-bold;
+            font-size: 19px;
+            line-height: 171%;
+            color: #1f2041;
+            margin-bottom: 15px;
+        }
+        &__text {
+            font-family: $main-font;
+            font-size: 14px;
+            line-height: 171%;
+            color: rgba(31, 32, 65, .75);
+            width: 341px;
+            margin: 0;
+        }
+    }
+}

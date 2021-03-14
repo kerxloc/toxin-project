@@ -5,6 +5,7 @@
     font-size: 12px;
     line-height: 15px;
     outline: none;
+    border: none;
     cursor: pointer;
 }
 
@@ -166,7 +167,7 @@
     color: rgba(31, 32, 65, .5);
 }
 
-@mixin arrow-style() {
+@mixin arrow-style {
     font-family: $icon-font;
     font-size: 24px;
     line-height: 24px;
@@ -218,12 +219,19 @@
     cursor: pointer;
 }
 
-// Adaptiv font
-$maxWidth: 1440;
-@mixin adaptiv-font($pcSize, $mobSize) {
- $addSize: $pcSize - $mobSize;
- $maxWidth: $maxWidth - 320;
- font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+@mixin booking-style($line-height) {
+    font-family: $main-font;
+    font-size: 14px;
+    line-height: $line-height;
+    color: rgba(31, 32, 65, 0.75);
+}
+
+@mixin booking-circles($color...) {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient($color);
+    margin-right: 5px;
 }
 
 @mixin validation-indicator {
@@ -245,4 +253,12 @@ $maxWidth: 1440;
                     0 0 20px #bc9cff,
                     0 0 40px #bc9cff,
     }
+}
+
+// Adaptiv font
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }

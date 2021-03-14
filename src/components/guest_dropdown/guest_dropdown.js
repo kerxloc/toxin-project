@@ -4,12 +4,9 @@ const minusButtons = document.querySelectorAll(".guest-inner__circle-minus");
 const countText1 = document.querySelector("#text-1");
 const countText2 = document.querySelector("#text-2");
 const countText3 = document.querySelector("#text-3");
-const guestApplyButton = document.querySelector(".guest-inner__button_apply");
-const guestClearButton = document.querySelector(".guest-inner__button_clear");
-const guestInput = document.querySelector(".form-inner__input_large");
-const dropdownForm = document.querySelector(".guest-dropdown");
-const expandInputIcons = document.querySelectorAll(".icon__expand-input");
-
+export const guestApplyButton = document.querySelector(".guest-inner__button_apply");
+export const guestClearButton = document.querySelector(".guest-inner__button_clear");
+export const dropdownForm = document.querySelector(".guest-dropdown");
 
 countPlus.addEventListener("click", (e) => {
     let target = e.target.closest("div");
@@ -17,7 +14,6 @@ countPlus.addEventListener("click", (e) => {
             countText1.textContent++;
             minusButtons[0].style.borderColor = 'rgba(31, 32, 65, 0.5)';
             minusButtons[0].children[0].style.color = 'rgba(31, 32, 65, 0.5)';
-
         } else if (target.getAttribute("id") == "Pbutton-2") {
             countText2.textContent++;
             minusButtons[1].style.borderColor = 'rgba(31, 32, 65, 0.5)';
@@ -60,45 +56,9 @@ countMinus.addEventListener("click", (e) => {
         }
     });
 
-    function sum() {
-        let countInt1 = parseInt(countText1.textContent);
-        let countInt2 = parseInt(countText2.textContent);
-        let countInt3 = parseInt(countText3.textContent);
-        return countResult = countInt1 + countInt2 + countInt3;
-    }
-
-    guestApplyButton.addEventListener("click", (e) => {
-        let guestsSum = sum();
-            if (guestsSum == 0) {
-                guestInput.setAttribute("value", "Введите хотя бы одного гостя");
-            } else if (guestsSum == 1 || guestsSum == 21 || guestsSum == 31) {
-                guestInput.setAttribute("value", countResult + " гость");
-                dropdownForm.classList.toggle("guest-dropdown_active");
-                expandInputIcons[2].classList.toggle("icon__expand-input_active")
-            } else if (guestsSum >= 2 && guestsSum <= 4 || guestsSum >= 22 && guestsSum <= 24) {
-                guestInput.setAttribute("value", countResult + " гостя");
-                dropdownForm.classList.toggle("guest-dropdown_active");
-                expandInputIcons[2].classList.toggle("icon__expand-input_active")
-            } else {
-                guestInput.setAttribute("value", countResult + " гостей");
-                dropdownForm.classList.toggle("guest-dropdown_active");
-                expandInputIcons[2].classList.toggle("icon__expand-input_active")
-            }
-            e.preventDefault();
-});
-
-guestClearButton.addEventListener("click", (e) => {
-    guestInput.removeAttribute("value");
-    e.preventDefault();
-});
-
-guestInput.addEventListener("click", () => {
-    dropdownForm.classList.toggle("guest-dropdown_active")
-    expandInputIcons[2].classList.toggle("icon__expand-input_active")
-    }
-);
-expandInputIcons[2].addEventListener("click", () => {
-    dropdownForm.classList.toggle("guest-dropdown_active")
-    expandInputIcons[2].classList.toggle("icon__expand-input_active")
-    }
-);
+export function sum(countResult) {
+    let countInt1 = parseInt(countText1.textContent);
+    let countInt2 = parseInt(countText2.textContent);
+    let countInt3 = parseInt(countText3.textContent);
+    return countResult = countInt1 + countInt2 + countInt3;
+}

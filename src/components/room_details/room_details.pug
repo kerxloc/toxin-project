@@ -1,0 +1,136 @@
+section.room-details
+    div.room-images
+        img.room-images__img-1(src="./assets/img/room-details/room-888_1.jpg")
+        div.room-images__small.small
+            img.small__img-2(src="./assets/img/room-details/room-888_2.jpg")
+            img.small__img-3(src="./assets/img/room-details/room-888_3.jpg")
+    div.container
+        div.room-about
+            div.room-info
+                h2.room-info__title Сведения о номере
+                div.comfort
+                    div.comfort__icon.material-icons insert_emoticon
+                    div.comfort-text
+                        div.comfort-text__title Комфорт 
+                            span.comfort-text__subtitle Шумопоглощающие стены
+                div.comfort
+                    div.comfort__icon.material-icons location_city
+                    div.comfort-text
+                        div.comfort-text__title Удобство
+                            span.comfort-text__subtitle Окно в каждой из спален
+                div.comfort
+                    div.comfort__icon.material-icons whatshot
+                    div.comfort-text
+                        div.comfort-text__title Уют
+                            span.comfort-text__subtitle Номер оснашён камином
+            div.impression
+                h2.impression__title Впечатления от номера
+                div.impression__body.impression-body
+                    div.impression-body__diagram.round-diagram
+                        canvas#round-diagram(width="120" height="120")
+                        div.round-diagram__number 260
+                            span.round-diagram__text Голосов
+                    div.impression-body__list
+                        div.impression-item
+                            div.impression-item__circle_orange
+                            span.impression-item__text Великолепно
+                        div.impression-item
+                            div.impression-item__circle_green
+                            span.impression-item__text Хорошо
+                        div.impression-item
+                            div.impression-item__circle_purple
+                            span.impression-item__text Удовлетворительно
+                        div.impression-item
+                            div.impression-item__circle_gray
+                            span.impression-item__text Разочарован
+            form.booking-outter.booking-inner
+                div.booking-top
+                    div.booking-top__room-number №
+                        span.booking-top__room-number_large  888
+                    span.booking-top__luxury Люкс
+                    div.booking-top__price 9 990₽
+                        span.booking-top__price_small  в сутки
+                div.booking-input
+                    div.booking-input__row
+                        div.booking-arrival
+                            label.booking-arrival__label Прибытие
+                            div.icon
+                                input.booking-arrival__input(type="text" name="arrival-date" autocomplete="off" placeholder="ДД.ММ.ГГГГ")
+                                i.icon__expand-input expand_more
+                        div.booking-departure
+                            label.booking-departure__label Выезд
+                            div.icon
+                                input.booking-departure__input(type="text" name="departure-date" autocomplete="off" placeholder="ДД.ММ.ГГГГ")
+                                i.icon__expand-input expand_more
+                    div.booking-guests
+                        label.booking-guests__label Гости
+                        div.icon
+                            input.booking-guests__input(type="text" name="numberofguests" autocomplete="off" placeholder="Сколько гостей")
+                            i.icon__expand-input expand_more
+                        include ../guest_dropdown/guest_dropdown.pug
+                div.booking-price
+                    div.price-per-day
+                        span.price-per-day__calculate 9 990₽ х 4 суток
+                        span.price-per-day__total 39 960₽
+                    div.discount
+                        div.discount-main
+                            span.discount-main__value Сбор за услуги: скидка 2 179₽
+                            div.discount-main__info i
+                        span.discount__total 0₽
+                    div.additional-services
+                        div.additional-services-main
+                            span.additional-services-main__title Сбор за дополнительные услуги
+                            div.additional-services-main__info i
+                        span.additional-services__value 300₽
+                    div.total
+                        span.total__title Итого
+                        span.total__sum 38 081₽
+                    div.icon
+                        input.booking-inner__button(type="submit" value="Забронировать")
+                        button.icon__arrow-button arrow_forward
+        div.reviews
+            div.reviews-top
+                h2.reviews-top__title Отзывы посетителей номера
+                span.reviews-top__review-number 2 отзыва
+            div.commentary
+                div.commentary-top
+                    img.commentary-top__avatar(src="./assets/img/room-details/people/human-1.png")
+                    div.commentary-top__name Мурад Сарафанов
+                        span.commentary-top__days 5 дней назад
+                div.commentary-main
+                    div.like
+                        div.like__heart favorite_border
+                        span.like__number 2
+                    p.commentary-main__comment 
+                        | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
+                        | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто 
+                        | не жаловался из соседей.
+                div.commentary
+                    div.commentary-top
+                        img.commentary-top__avatar(src="./assets/img/room-details/people/human-2.png")
+                        div.commentary-top__name Патрисия Стёклышкова
+                            span.commentary-top__days Неделю назад
+                    div.commentary-main
+                        div.like
+                            div.like__heart favorite_border
+                            span.like__number 2
+                        p.commentary-main__comment 
+                            | Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,
+                            | каждый день новое блюдо и десерт как комплимент
+        div.policy 
+            div.policy-rules
+                h2.policy-rules__title Правила
+                div.policy-rules__main
+                    div.policy-rules__circle
+                    span.policy-rules__text Нельзя с питомцами
+                div.policy-rules__main
+                    div.policy-rules__circle
+                    span.policy-rules__text Без вечеринок и мероприятий
+                div.policy-rules__main
+                    div.policy-rules__circle
+                    span.policy-rules__text Время прибытия — после 13:00, <br>а выезд до 12:00
+            div.cancel
+                h2.cancel__title Отмена
+                p.cancel__text 
+                    | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. 
+                    | до прибытия вы получите полный возврат за вычетом сбора за услуги.
