@@ -391,6 +391,19 @@
                 align-items: center;
                 padding-left: 5px;
                 margin-right: 14px;
+                cursor: pointer;
+                position: relative;
+                &_active::after {
+                    content: '';
+                    position: absolute;
+                    top: -1px; 
+                    bottom: -1px;
+                    left: -1px; 
+                    right: -1px;
+                    background: $main-gradient;
+                    border-radius: 10px;
+                    z-index: -1;
+                }
                 &__heart {
                     font-family: $icon-font;
                     font-size: 10px;

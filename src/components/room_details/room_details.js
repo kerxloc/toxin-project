@@ -63,3 +63,19 @@ let myChart = new Chart(ctx, {
         events: []
     }
 });
+
+// Like
+const likeButton = document.querySelector(".like");
+const likeHeart = document.querySelector(".like__heart");
+const likeNumber = document.querySelector(".like__number");
+
+likeButton.addEventListener("click", (e) => {
+    let target = e.target.closest("span");
+    likeButton.classList.add("like_active");
+    likeHeart.innerHTML = "favorite";
+    likeHeart.style.color = "#bc9cff";
+    likeNumber.style.color = "#bc9cff";
+    if (likeNumber.textContent < 1) {
+        likeNumber.textContent++;
+    }
+});

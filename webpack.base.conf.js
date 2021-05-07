@@ -4,15 +4,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-
 const PATHS = {
-  src: path.join(__dirname, './src'),
-  dist: path.join(__dirname, './dist'),
+  src: path.join(__dirname, 'src'),
+  dist: path.join(__dirname, 'dist'),
   assets: 'assets/'
 }
 
-const PAGES_DIR = `${PATHS.src}/pages`
-const PAGES = fs.readdirSync(PAGES_DIR).filter(filename => filename.endsWith('.pug'))
+const PAGES_DIR = `${PATHS.src}/pages`;
+const PAGES = fs.readdirSync(PAGES_DIR).filter(filename => filename.endsWith('.pug'));
 
 module.exports = {
 
@@ -24,12 +23,10 @@ module.exports = {
       app: PATHS.src,
       roomList: `${PATHS.src}/js/room-list.js`,
       loginReg: `${PATHS.src}/js/login-reg.js`,
-      roomDetails: `${PATHS.src}/js/room-details.js` 
+      roomDetails: `${PATHS.src}/js/room-details.js`,
     },
     output: {
-      filename: `${PATHS.assets}js/[name].[hash].js`,
-      path: PATHS.dist,
-      publicPath: '/' 
+      filename: `${PATHS.assets}js/[name].[contenthash].js`
     },
     optimization: {
       splitChunks: {
@@ -45,12 +42,11 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-          filename: `${PATHS.assets}css/[name].[hash].css`
+          filename: './assets/css/[name].[contenthash].css',
         }),
         new CopyWebpackPlugin([
           { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-          { from: `${PATHS.src}/components/room_details/images`, to: `${PATHS.assets}img/room-details` },
-          { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` }
+          { from: `${PATHS.src}/components/room_details/images`, to: `${PATHS.assets}img/room-details` }
         ]),
         ...PAGES.map(page => new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
@@ -61,22 +57,48 @@ module.exports = {
         rules: [
           {
             test: /\.css$/,
-            use: [ MiniCssExtractPlugin.loader, 'css-loader'],
+            use: [
+              'style-loader',
+              {
+                loader: 'css-loader',
+                options: {sourceMap: true},
+              },
+              {
+                loader: 'postcss-loader',
+                options: {sourceMap: true, config: {path: `./postcss.config.js`}},
+              },
+              {
+                loader: 'resolve-url-loader',
+                options: {
+                  root: path.join(__dirname, 'src'),
+                },
+              },
+            ],
           },
 
           {
             test: /\.scss$/,
             use: [
-                'style-loader',
-                MiniCssExtractPlugin.loader,
-                {
-                  loader: 'css-loader',
-                  options: { sourceMap: true }
-                }, {
-                  loader: 'sass-loader',
-                  options: { sourceMap: true }
-                }
-              ]
+              'style-loader',
+              {
+                loader: 'css-loader',
+                options: {sourceMap: true},
+              },
+              {
+                loader: 'postcss-loader',
+                options: {sourceMap: true, config: {path: `./postcss.config.js`}},
+              },
+              {
+                loader: 'resolve-url-loader',
+                options: {
+                  engine: 'postcss'
+                },
+              },
+              {
+                loader: 'sass-loader',
+                options: {sourceMap: true},
+              },
+            ],
           },
 
           {
@@ -91,7 +113,7 @@ module.exports = {
           },
 
           {
-            test: /\.(png|jpg|gif|svg)$/,
+            test: /(\.(png|jpe?g|gif)$|^((?!font).)*\.svg$)/,
             loader: 'file-loader',
             options: {
               name: '[name].[ext]'
@@ -99,12 +121,20 @@ module.exports = {
           },
 
           {
-            test: /\.(woff|ttf|svg|)(\?v=\d+\.\d+\.\d+)?$/,
+            test: /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/,
+            exclude: [/img/],
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: './',
-              useRelativePath: true
+                name: '[name].[ext]',
+                outputPath: (url, resourcePath) => {
+                  if (/Material-icons/.test(resourcePath)) {
+                      return `assets/fonts/Material-icons/${url}`;
+                  } else if (/Montserrat/.test(resourcePath)) {
+                      return `assets/fonts/Montserrat/${url}`;
+                  } else if (/Font-Awesome/.test(resourcePath)) {
+                      return `assets/fonts/Font-Awesome/${url}`;
+                }
+              },
             }
           }
         ],
