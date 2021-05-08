@@ -1,2 +1,4 @@
-# toxin-project
-https://kerxloc.github.io/toxin-project/
+# toxin
+__________________________________________________________
+### Страницы
+- [Главная страница](https://kerxloc.github.io/toxin-project/)
