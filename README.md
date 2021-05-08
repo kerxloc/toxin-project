@@ -1,6 +1,5 @@
 # Toxin
 ## Сайт аренды номеров отеля
-__________________________________________________________
 ### Страницы
 - [Главная страница](https://kerxloc.github.io/toxin-project/landing_page.html)
 - [Регистрация](https://kerxloc.github.io/toxin-project/registration_page.html)
