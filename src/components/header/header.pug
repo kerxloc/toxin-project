@@ -2,7 +2,7 @@ header.header
     div.container
         div.header-content
             div.header-logo
-                a(href="https://github.com/kerxloc/toxin-project/landing_page.html")
+                a(href="landing_page.html")
                     img.header-logo__img(src='./assets/img/logo.svg')
             nav.header-menu
                 -var services = 'Услуги'
@@ -18,9 +18,9 @@ header.header
                     else 
                         a.header-menu__link(href=val)= key
             div.header__button.button
-                a(href='#' data-da='header-menu, last, 992')
+                a(href='login_page.html' data-da='header-menu, last, 992')
                     button.button__login Войти
-                a(href='#' data-da='header-menu, last, 992')
+                a(href='registration_page.html' data-da='header-menu, last, 992')
                     button.button__registration Зарегистрироваться
             div.header-burger
                 span

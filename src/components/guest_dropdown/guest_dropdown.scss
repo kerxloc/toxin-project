@@ -8,6 +8,7 @@
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease 0s;
+    z-index: 5;
     @media (max-width: $screen-md) {
         width: 240px;
     }
@@ -36,7 +37,6 @@
         }
         .minus-button {
             &__text {
-                font-family: $main-font;
                 font-size: 18px;
                 text-align: center;
                 color: rgba(31, 32, 65, 0.25);
@@ -55,7 +55,6 @@
         margin: 7px 0 0 0;
         .plus-button {
             &__text {
-                font-family: $main-font;
                 font-size: 18px;
                 text-align: center;
                 color: rgba(31, 32, 65, 0.5);

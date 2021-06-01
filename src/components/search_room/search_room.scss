@@ -78,7 +78,6 @@
             }
         }
         &__prices {
-            font-family: $main-font;
             font-size: 12px;
             line-height: 15px;
             text-transform: uppercase;
@@ -139,7 +138,6 @@
         }
     }
     .price-footer {
-        font-family: $main-font;
         font-size: 12px;
         line-height: 14px;
         color: rgba(31, 32, 65, 0.5);
@@ -179,8 +177,6 @@
             }
         }
         &__text {
-            font-family: $main-font;
-            font-size: 14px;
             line-height: 18px;
             color: rgba(31, 32, 65, 0.5);
             @media (max-width: $screen-md) {
@@ -215,8 +211,6 @@
             }
             }
             &__text {
-                font-family: $main-font;
-                font-size: 14px;
                 line-height: 18px;
                 color: rgba(31, 32, 65, 0.5);
                 @media (max-width: $screen-md) {
@@ -249,8 +243,6 @@
             }
             }
             &__text {
-                font-family: $main-font;
-                font-size: 14px;
                 line-height: 18px;
                 color: rgba(31, 32, 65, 0.5);
                 margin-top: 2px;
@@ -312,7 +304,6 @@
         }
         &__subtitle {
             display: block;
-            font-family: $main-font;
             font-size: 12px;
             line-height: 14px;
             color: rgba(31, 32, 65, 0.5);
@@ -361,7 +352,6 @@
         }
         &__subtitle {
             display: block;
-            font-family: $main-font;
             font-size: 12px;
             line-height: 14px;
             color: rgba(31, 32, 65, 0.5);
@@ -459,8 +449,6 @@
             }
         }
         &__title {
-            font-family: $main-font;
-            font-size: 14px;
             line-height: 18px;
             color: rgba(31, 32, 65, 0.5);
             @media (max-width: $screen-md) {
@@ -721,7 +709,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: $main-font;
         font-size: 12px;
         color: rgba(31, 32, 65, 0.5);
         width: 40px;
@@ -761,8 +748,6 @@
     justify-content: center;
     margin-top: 10px;
     &__text {
-        font-family: $main-font;
-        font-size: 14px;
         line-height: 171%;
         color: rgba(31, 32, 65, 0.75);
         margin-bottom: 70px;

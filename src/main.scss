@@ -16,6 +16,9 @@
 
 body {
     height: 100%;
+    font-family: $main-font;
+    font-size: 14px;
+    background-color: #fff;
     @media (max-width: $screen-lg) {
         &.lock {
             overflow: hidden;

@@ -77,24 +77,44 @@
     &__group-3 {
         margin-top: 17px;
     }
-}
-.search-button {
-    @include buttons-style;
-    height: 44px;
-    width: 320px;
-    background: $main-gradient;
-    color: #fff;
-    text-align: center;
-    margin-top: 30px;
-    border: none;
-    &:hover {
-        filter: brightness(105%);
-    }
-    @media (max-width: $screen-md) {
-        width: 240px;
-        font-size: 10px;
-        height: 35px;
-        margin-top: 15px;
+    &__button-block {
+        margin-top: 30px;
+        position: relative;
+        @media (max-width: $screen-md) {
+            margin-top: 15px;
+        }
+        .button-items {
+            &__search-button {
+                @include buttons-style;
+                height: 44px;
+                width: 320px;
+                background: $main-gradient;
+                color: #fff;
+                text-align: center;
+                border: none;
+                &:hover {
+                    filter: brightness(105%);
+                }
+                @media (max-width: $screen-md) {
+                    width: 240px;
+                    font-size: 10px;
+                    height: 35px;
+                    margin-top: 15px;
+                }
+            }
+            &__arrow {
+                @include arrow-style;
+                color: #fff;
+                background: none;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                @media (max-width: $screen-md) {
+                    font-size: 20px;
+                    top: 19px;
+                }
+            }
+        }
     }
 }
 .promo {

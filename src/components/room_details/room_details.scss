@@ -59,7 +59,6 @@
         flex-direction: column;
         &__title {
             font-family: $mainf-bold;
-            font-size: 14px;
             line-height: 171%;
             color: rgba(31, 32, 65, .75);
         }
@@ -151,7 +150,6 @@
             align-items: flex-end;
             &__room-number {
                 font-family: $mainf-bold;
-                font-size: 14px;
                 line-height: 17px;
                 color: #1F2041;
                 &_large {
@@ -168,7 +166,6 @@
             }
             &__price {
                 font-family: $mainf-bold;
-                font-size: 14px;
                 line-height: 129%;
                 color: rgba(31, 32, 65, 0.5);
                 margin-left: 90px;
@@ -335,9 +332,6 @@
             color: #1f2041;
         }
         &__review-number {
-            font-family: $main-font;
-            font-size: 14px;
-            line-height: 100%;
             color: rgba(31, 32, 65, .5);
         }
     }
@@ -349,21 +343,21 @@
             display: flex;
             align-items: center;
             &__avatar {
-                flex: 0 0 88px;
-                height: 88px;
+                flex: 0 0 48px;
+                height: 48px;
                 filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, .1));
-                margin: 0 0 0 -20px;
-                overflow: hidden;
+                border: 2px solid #fff;
+                border-radius: 32px;
+                margin: 0 15px 0 0;
                 img {
-                    max-width: 100%;
+                    object-fit: cover;
                 }
             }
             &__name {
                 font-family: $mainf-bold;
-                font-size: 14px;
                 line-height: 171%;
                 color: rgba(31, 32, 65, .75);
-                margin: -9px 0 0 -10px;
+                margin: 0 0 0 -10px;
             }
             &__days {
                 font-family: $main-font;
@@ -372,10 +366,8 @@
         }
         .commentary-main {
             display: flex;
-            margin-top: -10px;
+            margin-top: 10px;
             &__comment {
-                font-family: $main-font;
-                font-size: 14px;
                 line-height: 171%;
                 color: rgba(31, 32, 65, .75);
                 width: 653px;
@@ -411,7 +403,6 @@
                     width: 20px;
                 }
                 &__number {
-                    font-family: $main-font;
                     font-size: 10px;
                     color: rgba(31, 32, 65, .25);
                 }
@@ -455,8 +446,6 @@
             margin-right: 10px;
         }
         &__text {
-            font-family: $main-font;
-            font-size: 14px;
             line-height: 171%;
             color: rgba(31, 32, 65, .75);
         }
@@ -470,8 +459,6 @@
             margin-bottom: 15px;
         }
         &__text {
-            font-family: $main-font;
-            font-size: 14px;
             line-height: 171%;
             color: rgba(31, 32, 65, .75);
             width: 341px;
