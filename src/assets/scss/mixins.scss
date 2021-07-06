@@ -224,27 +224,6 @@
     margin-right: 5px;
 }
 
-@mixin validation-indicator {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(31, 32, 65, 0.15);
-    border-radius: 50%;
-    &_valid {
-        background-color: #bc9cff;
-        box-shadow: 0 0 5px #bc9cff,
-                    0 0 10px #bc9cff,
-                    0 0 20px #bc9cff,
-                    0 0 40px #bc9cff,
-    }
-    &_invalid {
-        background-color: rgba(31, 32, 65, 0.15);
-        box-shadow: 0 0 5px #bc9cff,
-                    0 0 10px #bc9cff,
-                    0 0 20px #bc9cff,
-                    0 0 40px #bc9cff,
-    }
-}
-
 // Adaptiv font
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {

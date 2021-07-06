@@ -130,21 +130,12 @@
                 width: 230px;
             }
         }
-        .email-box {
-            position: relative;
             &__email {
                 @include input-style;
                 width: 305px;
                 margin-top: 5px;
                 @media (max-width: $screen-md) {
                     width: 230px;
-                }
-            }
-            &__indicator {
-                    @include validation-indicator;
-                    position: absolute;
-                    top: 25px;
-                    right: 20px;
                 }
             }
         .special-offer {
